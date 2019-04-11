@@ -5,9 +5,11 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "start": "node server.js"
   },
   "dependencies": {
+    "connect-history-api-fallback": "^1.6.0",
     "firebase": "^5.9.3",
     "register-service-worker": "^1.6.2",
     "vue": "^2.6.6",

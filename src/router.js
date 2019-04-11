@@ -1,15 +1,15 @@
-import Vue from 'vue';
+/* eslint-disable eol-last */
 
-import Router from 'vue-router';
-import Home from './views/Home.vue';
-import About from './views/About.vue';
-import Dasboard from './views/Dasboard.vue';
-import Login from './views/Login.vue';
+import Vue from 'vue'
+import Router from 'vue-router'
+import Home from './views/Home.vue'
+import About from './views/About.vue'
+import Dasboard from './views/Dasboard.vue'
+import Login from './views/Login.vue'
+import firebase from 'firebase/app'
+require('firebase/auth')
 
-import firebase from 'firebase/app';
-
-
-Vue.use(Router);
+Vue.use(Router)
 
 let router = new Router({
   mode: 'history',
@@ -20,13 +20,18 @@ let router = new Router({
       path: '/',
       name: 'home',
       component: Home,
+      meta: {
+        requiresGuest: true
+      }
     },
     {
       path: '/about',
       name: 'about',
       component: About,
+      meta: {
+        requiresGuest: true
+      }
     },
-
     {
       path: '/dasboard',
       name: 'dasboard',
@@ -35,7 +40,6 @@ let router = new Router({
         requiresAuth: true
       }
     },
-
     {
       path: '/login',
       name: 'login',
@@ -43,47 +47,44 @@ let router = new Router({
       meta: {
         requiresGuest: true
       }
-    },
-
-
-  ],
-});
+    }
+  ]
+})
 
 // ========================== Nav Guard ==========================
 router.beforeEach((to, from, next) => {
-  //store.state.currentUser
+  // store.state.currentUser
 
-  if ( to.matched.some(record => record.meta.requiresAuth) ) {
+  if (to.matched.some(record => record.meta.requiresAuth)) {
     // check if user exist
-    if (! firebase.auth().currentUser ) {
+    if (!firebase.auth().currentUser) {
       next({
         path: '/login',
         query: {
           redirect: to.fullPath
         }
       })
-    }else{
-      //Proced to de router
-      next();
+    } else {
+      // Proced to de router
+      next()
     }
-  }else if ( to.matched.some(record => record.meta.requiresGuest) ) {
+  } else if (to.matched.some(record => record.meta.requiresGuest)) {
     // check if user exist
-    if ( firebase.auth().currentUser ) {
+    if (firebase.auth().currentUser) {
       next({
         path: '/dasboard',
         query: {
           redirect: to.fullPath
         }
       })
-    }else{
-      //Proced to de router
-      next();
+    } else {
+      // Proced to de router
+      next()
     }
-  }else{
-    //Proced to de router
-    next();
+  } else {
+    // Proced to de router
+    next()
   }
+})
 
-});
-
-export default router;
+export default router
