@@ -1,17 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
-    <title>Moon - IT</title>
-  </head>
-  <body>
-    <noscript>
-      <strong>We're sorry but moon-web doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
-    </noscript>
-    <div id="app"></div>
-    <!-- built files will be auto injected -->
-  </body>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+  <title>Moon - IT</title>
+  
+  <style>
+    .bg {
+        background-attachment: scroll;
+        background-color: #666;
+        background-image: url("header.jpg");
+        background-position: top left,						center center;
+        background-repeat: repeat,							no-repeat;
+        background-size: auto,							cover;
+        color: #fff!important;
+        height: 100vh;
+    }
+
+    body{
+      background: transparent;
+    }
+
+  </style>
+</head>
+
+<body>
+  <noscript>
+    <strong>We're sorry but moon-web doesn't work properly without JavaScript enabled. Please enable it to
+      continue.</strong>
+  </noscript>
+  <div id="app"></div>
+  <!-- built files will be auto injected -->
+</body>
+
 </html>
