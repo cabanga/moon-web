@@ -1,6 +1,5 @@
 <template>
   <div class="container">
-
     <form class="form-signin" @submit.prevent="login">
       <h1 class="h3 mb-3 font-weight-normal text-center">Please sign in</h1>
 
@@ -29,7 +28,7 @@
       <br>
 
       <h5 class="text-center font-weight-normal">Or</h5>
-      <button type="submit" class="btn btnSubmit-login btn-sm btn-facebook"> Facebook Sign in</button>
+      <button v-on:click="authFacebook" class="btn btnSubmit-login btn-sm btn-facebook"> Facebook Sign in</button>
     </form>
   </div>
 </template>
@@ -37,8 +36,9 @@
 <script>
   /* eslint func-call-spacing: ["error", "never"] */
   /* eslint function-paren-newline: ["error", "multiline"] */
-  import { signIn } from '../api'
-  import { setToken } from '../api/session'
+  /* eslint-disable */
+
+  import { signIn, facebookAutProvider } from '../api'
   import '@/assets/css/login.css'
 
   // import store from '@/services/store';
@@ -54,13 +54,22 @@
     },
 
     methods: {
-      login () {
-        const creandials = { email: this.email, password: this.password }
-        signIn (creandials)
-        .then(currentToken => {
-          setToken(currentToken)
-          // this.$store.state.currentUser = user;
-          this.$router.push('/dasboard')
+      login() {
+        const creandials = {email: this.email, password: this.password}
+       
+        signIn(creandials)
+        .then( currentToken =>{
+          this.$router.go('/dasboard')
+        })
+        .catch(error =>{
+          this.error = error
+        })
+      },
+
+      authFacebook () {
+        facebookAutProvider ()
+        .then(res => {
+          this.$router.go('/dasboard')
         })
         .catch(error => {
           this.error = error
@@ -75,3 +84,5 @@
     border-radius: 50px;
   }
 </style>
+
+
