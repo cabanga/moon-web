@@ -13,41 +13,38 @@
       <label for="inputEmail" class="sr-only">Email address</label>
       <input v-model="email" type="" id="inputEmail" class="form-control" placeholder="Email address" required="" autofocus="">
       <br>
+
       <label for="inputPassword" class="sr-only">Password</label>
       <input v-model="password" type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
-      
       <br>
+
       <button type="submit" class="btn btnSubmit-login btn-sm ">Sign in</button>
+
       <br>
       <br>
+
       <router-link class="btn btnSubmit-login-out btn-sm" to="/register">Sign out</router-link>
+
       <br>
       <br>
-      
+
       <h5 class="text-center font-weight-normal">Or</h5>
       <button type="submit" class="btn btnSubmit-login btn-sm btn-facebook"> Facebook Sign in</button>
-      
-
     </form>
-
-
   </div>
 </template>
 
-
 <script>
+  /* eslint func-call-spacing: ["error", "never"] */
+  /* eslint function-paren-newline: ["error", "multiline"] */
   import { signIn } from '../api'
+  import { setToken } from '../api/session'
   import '@/assets/css/login.css'
 
-//  import store from '@/services/store';
+  // import store from '@/services/store';
 
   export default {
     name: 'Login',
-    computed: {
-      currentUser(){
-        return this.$store.state.currentUser
-      }
-    },
     data () {
       return {
         email: '',
@@ -55,21 +52,19 @@
         error: ''
       }
     },
-    methods: {
-      login() {
-        const creandials = {login: this.email, password: this.password}
-       
-        signIn(creandials)
-        .then( user =>{
-          console.log(user);
-          //this.$store.state.currentUser = user;
-          this.$router.push('/dasboard');
-        })
-        .catch( error =>{
-          this.error = error,
-          store.commit('setError', error);
-        })
 
+    methods: {
+      login () {
+        const creandials = { email: this.email, password: this.password }
+        signIn (creandials)
+        .then(currentToken => {
+          setToken(currentToken)
+          // this.$store.state.currentUser = user;
+          this.$router.push('/dasboard')
+        })
+        .catch(error => {
+          this.error = error
+        })
       }
     }
   }

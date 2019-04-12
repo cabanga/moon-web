@@ -6,8 +6,6 @@ import Home from './views/Home.vue'
 import About from './views/About.vue'
 import Dasboard from './views/Dasboard.vue'
 import Login from './views/Login.vue'
-import firebase from 'firebase/app'
-require('firebase/auth')
 
 Vue.use(Router)
 
@@ -21,7 +19,7 @@ let router = new Router({
       name: 'home',
       component: Home,
       meta: {
-        requiresGuest: true
+        requiresGuest: false
       }
     },
     {
@@ -52,37 +50,28 @@ let router = new Router({
 })
 
 // ========================== Nav Guard ==========================
-router.beforeEach((to, from, next) => {
-  // store.state.currentUser
+var TOKEN = localStorage.getItem('currentToken')
 
+router.beforeEach((to, from, next) => {
   if (to.matched.some(record => record.meta.requiresAuth)) {
-    // check if user exist
-    if (!firebase.auth().currentUser) {
+    if (!TOKEN) {
       next({
         path: '/login',
-        query: {
-          redirect: to.fullPath
-        }
+        query: { redirect: to.fullPath }
       })
     } else {
-      // Proced to de router
       next()
     }
   } else if (to.matched.some(record => record.meta.requiresGuest)) {
-    // check if user exist
-    if (firebase.auth().currentUser) {
+    if (TOKEN) {
       next({
         path: '/dasboard',
-        query: {
-          redirect: to.fullPath
-        }
+        query: { redirect: to.fullPath }
       })
     } else {
-      // Proced to de router
       next()
     }
   } else {
-    // Proced to de router
     next()
   }
 })
