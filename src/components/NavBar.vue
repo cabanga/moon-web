@@ -4,7 +4,7 @@
             <div class="container">
 
                 <router-link class="navbar-brand" to="/">
-                    <h4>Moon</h4>
+                    <img width="50" alt="Vue logo" src="../assets/images/icon.png">
                 </router-link>
 
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -39,6 +39,6 @@
 
 <style scoped>
   .mg-nav{
-    margin-bottom: 5%;
+    margin-bottom: 3%;
   }
 </style>

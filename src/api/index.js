@@ -31,21 +31,6 @@ export function signIn (creandials) {
 
 // ============================= DESTROY SESSION ===========================
 
-export function signOut () {
-  return new Promise((resolve, reject) => {
-    firebase.auth().signOut()
-    .then(res => {
-      localStorage.removeItem('currentToken')
-      console.log('remove currentToken !!!')
-      resolve(true)
-    }).catch(error => {
-      reject(error.message)
-    })
-  })
-}
-
-// ============================= DESTROY SESSION ===========================
-
 export function facebookAutProvider () {
   return new Promise((resolve, reject) => {
     var provider = new firebase.auth.FacebookAuthProvider()
@@ -55,6 +40,21 @@ export function facebookAutProvider () {
       // var user = res.user
       setToken(token)
       resolve(token)
+    }).catch(error => {
+      reject(error.message)
+    })
+  })
+}
+
+// ============================= DESTROY SESSION ===========================
+
+export function signOut () {
+  return new Promise((resolve, reject) => {
+    firebase.auth().signOut()
+    .then(res => {
+      localStorage.removeItem('currentToken')
+      console.log('remove currentToken !!!')
+      resolve(true)
     }).catch(error => {
       reject(error.message)
     })

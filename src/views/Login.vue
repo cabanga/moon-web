@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <form class="form-signin" @submit.prevent="login">
-      <h1 class="h3 mb-3 font-weight-normal text-center">Please sign in</h1>
+      <h1 class="h3 mb-3 font-weight-normal text-center">Please Login</h1>
 
       <br>
 
@@ -18,11 +18,6 @@
       <br>
 
       <button type="submit" class="btn btnSubmit-login btn-sm ">Sign in</button>
-
-      <br>
-      <br>
-
-      <router-link class="btn btnSubmit-login-out btn-sm" to="/register">Sign out</router-link>
 
       <br>
       <br>
