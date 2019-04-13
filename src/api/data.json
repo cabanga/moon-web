@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "title": "Programdor web Ruby On Rails",
+        "company": "Unitel",
+        "salary": "300,000.00",
+        "workPlace": "Luanda, Samba",
+        "city": "Luanda"
+    },
+    {
+        "id": 2,
+        "title": "Web design",
+        "company": "Ramos Soft",
+        "salary": "130,000.00",
+        "workPlace": "Benguela, Caponte",
+        "city": "Benguela"
+    },
+    {
+        "id": 3,
+        "title": ".Net Developer",
+        "company": "Primavera Angola",
+        "salary": "90,000.00",
+        "workPlace": "Huila, Benfica",
+        "city": "Huila"
+    }
+]
