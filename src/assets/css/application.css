@@ -116,3 +116,8 @@
   padding: 8px 30px!important;
   transition: all 0.1s;
 }
+
+.navbar-toggler{
+  border: 0px solid transparent!important;
+  border-radius: 0!important;
+}
