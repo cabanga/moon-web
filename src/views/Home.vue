@@ -2,23 +2,32 @@
   <div>
     <div class="bg-home">
       <div class="container container-home">
-        <h2 class="text-center text-title ">
+        <br>
+        <h2 class="text-center text-title under-text">
           {{ $t('titleDefaul') }}
         </h2>
       </div>
     </div>
 
-    <div class="container">
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
+    <div class="container m15">
+      
       <div class="row no-padding">
         <VacancyCard v-for="vac in dataVacancies" :vacancy="vac" :key="vac.id">
         </VacancyCard>
       </div>
+
+      <br>
+      <br>
+      <br>
+      
+      <div>
+        <h2 class="text-center text-title under-text">
+          {{ $t('titleDefaul2') }}
+        </h2>
+        <p class="text-center text-d p-text">{{ $t('descriptionTitleDefault2') }}</p>
+      </div>
+
+      
       <br>
       <br>
     </div>

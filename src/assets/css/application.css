@@ -18,14 +18,35 @@
   src: url(../fonts/ProximaNova-Bold.otf) format("truetype");
 }
 
+@font-face {
+  font-family: "Lobster-Regular";
+  src: url(../fonts/Lobster-Regular.ttf) format("truetype");
+}
+
 * {
   font-family: 'ProximaNova Normal';
 }
+
 
 /*
 ==============================================================
 ==============================================================
 */
+
+.m15{
+  margin-top: 15%;
+}
+
+.p-text{
+  padding: 0 100px!important;
+}
+
+.text-d{
+  color: #666!important;
+}
+.under-text {
+  font-family: 'Lobster-Regular', cursive;
+}
 
 .p-info{
   font-size: 12px;
@@ -33,7 +54,7 @@
 }
 
 .text-title{
-  color: #271637;
+  color: #b63c06;
   padding: 40px 0px;
 }
 
@@ -57,8 +78,20 @@
   box-shadow: #00000038 0px -70px 74px;
 }
 
+.bg-vacancies {
+  background-attachment: fixed;
+  background-color: #666;
+  background-image: url('../images/header.jpg');
+  background-position: top left, center center;
+  background-repeat: repeat, no-repeat;
+  background-size: auto, cover;
+  color: #fff!important;
+  height: 200px;
+  margin-top: -3%;
+}
+
 .bg-home {
-  background-attachment: scroll;
+  background-attachment: fixed;
   background-color: #666;
   background-image: url('../images/header.jpg');
   background-position: top left, center center;
@@ -88,9 +121,9 @@
 }
 
 .btn-get-start-not{
-  color: #b363ff !important;
+  color: #b63c06 !important;
   background-color: #fff;
-  border-color: #b363ff;
+  border-color: #b63c06;
   margin-left: 20px;
   border-radius: 70px;
   padding: 8px 30px!important;
@@ -99,17 +132,17 @@
 
 .btnSubmit-login{
   color: #fff !important;
-  background-color: #b363ff;
-  border-color: #b363ff;
+  background-color: #b63c06;
+  border-color: #b63c06;
   padding: 8px 30px!important;
   border-radius: 70px;
   width: 100%;
 }
 
 .btnSubmit-login-out{
-  color: #b363ff !important;
+  color: #b63c06 !important;
   background-color: #fff;
-  border-color: #b363ff;
+  border-color: #b63c06;
   padding: 8px 30px!important;
   border-radius: 70px;
   width: 100%;
@@ -117,8 +150,8 @@
 
 .btn-get-start{
   color: #fff !important;
-  background-color: #b363ff;
-  border-color: #b363ff;
+  background-color: #b63c06;
+  border-color: #b63c06;
   margin-left: 20px;
   border-radius: 70px;
   padding: 8px 30px!important;
@@ -145,9 +178,9 @@
 }
 
 .btn-defaul{
-  color: #b363ff !important;
+  color: #b63c06 !important;
   background-color: #fff;
-  border-color: #b363ff;
+  border-color: #b63c06;
   padding: 8px 30px!important;
   border-radius: 70px;
   width: 100%;
@@ -155,8 +188,8 @@
 
 .btn-defaul:hover{
   color: #fff !important;
-  background-color: #b363ff;
-  border-color: #b363ff;
+  background-color: #b63c06;
+  border-color: #b63c06;
   margin-left: 20px;
   border-radius: 70px;
   padding: 8px 30px!important;
@@ -169,5 +202,5 @@
 }
 
 .color-default{
-  color: #b363ff;
+  color: #b63c06;
 }

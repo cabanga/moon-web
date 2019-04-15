@@ -11,7 +11,6 @@ import { setToken } from '../api/session'
 // https://moon--api.herokuapp.com/api/v1/vacancies
 
 // ================================== LOGIN =================================
-
 export function signIn (creandials) {
   return new Promise((resolve, reject) => {
     firebase.auth().signInWithEmailAndPassword(creandials.email, creandials.password)
@@ -29,8 +28,7 @@ export function signIn (creandials) {
   })
 }
 
-// ============================= DESTROY SESSION ===========================
-
+// ============================= FACEBOOK PROVIDER ===========================
 export function facebookAutProvider () {
   return new Promise((resolve, reject) => {
     var provider = new firebase.auth.FacebookAuthProvider()
@@ -47,7 +45,6 @@ export function facebookAutProvider () {
 }
 
 // ============================= DESTROY SESSION ===========================
-
 export function signOut () {
   return new Promise((resolve, reject) => {
     firebase.auth().signOut()

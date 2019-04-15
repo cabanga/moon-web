@@ -8,9 +8,9 @@
             </div>
             <div class="card-body">
                 <p><span>{{vacancy.company}}</span> </p>
-                <p class="p-info"><strong>Salário : </strong> <span>{{vacancy.salary}}</span> </p>
-                <p class="p-info"><strong>Local de trabalho : </strong> <span>{{vacancy.workPlace}}</span> </p>
-                <p class="p-info"><strong>Cidade : </strong> <span>{{vacancy.city}}</span> </p>
+                <p class="p-info"><strong>{{ $t('salary') }} : </strong> <span>{{vacancy.salary}}</span> </p>
+                <p class="p-info"><strong>{{ $t('workPlace') }} : </strong> <span>{{vacancy.workPlace}}</span> </p>
+                <p class="p-info"><strong>{{ $t('city') }} : </strong> <span>{{vacancy.city}}</span> </p>
                 <br>
                 <button type="submit" class="btn btnSubmit-login btn-sm ">Ver detalhes</button>
             </div>

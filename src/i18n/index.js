@@ -5,10 +5,46 @@ Vue.use(VueI18n)
 
 const messages = {
     'pt': {
-        titleDefaul: 'Plataforma 100% Angolana, para vagas de T.I.'
+        titleDefaul: 'Plataforma 100% Angolana, para recrutamento de programadores',
+        titleDefaul2: 'Nossos diferencias',
+        textLogin: 'Iniciar Sessão',
+        signin: 'Iniciar Sessão',
+        signout: 'Terminar Sessão',
+        signoup: 'Registar',
+        title: 'Titulo',
+        company: 'Empresa',
+        salary: 'Salário',
+        workPlace: 'Local de trabalho',
+        city: 'Cidade',
+        descriptionTitleDefault2: 'A Moon oferece um cadastro de maneira intuitiva e simples, bem como testes com os quais você pode demonstrar suas habilidades. Em pouco tempo consegui agendar entrevistas e estar inserido no mercado.',
+        description: 'Descrição',
+        typeCompany: 'Tipo de Empresa',
+        localization: 'Localização',
+        level: 'Nível',
+        typeJob: 'Tipo de Trabalho',
+        responsabily: 'Responsábilidade',
+        requeriment: 'Requisito'
     },
     'en': {
-        titleDefaul: '100% Angolan platform, for T.I.'
+        titleDefaul: '100% Angolan platform, for T.I.',
+        titleDefaul2: 'Our differences',
+        textLogin: 'Please Login',
+        signin: 'Sign in',
+        signout: 'Sign out',
+        signoup: 'Sign up',
+        title: 'Title',
+        company: 'Company',
+        salary: 'Salary',
+        workPlace: 'Work place',
+        city: 'City',
+        descriptionTitleDefault2: 'Moon offers an intuitive and simple registration, as well as tests with which you can demonstrate your skills. In a short time I was able to schedule interviews and be on the market.',
+        description: '',
+        typeCompany: '',
+        localization: '',
+        level: '',
+        typeJob: '',
+        responsabily: '',
+        requeriment: ''
     }
 }
 
@@ -18,3 +54,5 @@ const i18n = new VueI18n({
 })
 
 export default i18n
+
+

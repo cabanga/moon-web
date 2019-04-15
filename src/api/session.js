@@ -23,7 +23,7 @@ export function setCurrentUser (currentUser) {
   }
 }
 
-// ================== SET OBJECT OF CURRENT USER ===============
+// ================== TEST IF USER LOGGED ===============
 export function userLogged () {
   try {
     if(localStorage.getItem('currentToken')){

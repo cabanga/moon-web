@@ -5,7 +5,9 @@ import Router from 'vue-router'
 import Home from './views/Home.vue'
 import Dasboard from './views/Dasboard.vue'
 import Login from './views/Login.vue'
-import Vacancies from './views/Vacancies.vue'
+import Vacancies from './components/Vacancy'
+import VacancyShow from './components/Vacancy/Show'
+
 
 Vue.use(Router)
 
@@ -26,6 +28,9 @@ let router = new Router({
       path: '/vacancies',
       name: 'vacancies',
       component: Vacancies,
+      children: [
+        { path: ':show', component: VacancyShow }
+      ],
       meta: {
         requiresGuest: true
       }

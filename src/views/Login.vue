@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <form class="form-signin" @submit.prevent="login">
-      <h1 class="h3 mb-3 font-weight-normal text-center">Please Login</h1>
+      <h1 class="h3 mb-3 font-weight-normal text-center under-text">{{ $t('textLogin') }}</h1>
 
       <br>
 
@@ -17,13 +17,13 @@
       <input v-model="password" type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
       <br>
 
-      <button type="submit" class="btn btnSubmit-login btn-sm ">Sign in</button>
+      <button type="submit" class="btn btnSubmit-login btn-sm ">{{ $t('signin') }}</button>
 
       <br>
       <br>
 
       <h5 class="text-center font-weight-normal">Or</h5>
-      <button v-on:click="authFacebook" class="btn btnSubmit-login btn-sm btn-facebook"> Facebook Sign in</button>
+      <button v-on:click="authFacebook" class="btn btnSubmit-login btn-sm btn-facebook">{{ $t('signin') }} Facebook</button>
     </form>
   </div>
 </template>

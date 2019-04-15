@@ -5,7 +5,10 @@
         "company": "Unitel",
         "salary": "300,000.00",
         "workPlace": "Luanda, Samba",
-        "city": "Luanda"
+        "city": "Luanda",
+        "skills": [
+            "Boostrap", "Jquery", "Ruby Puro"
+        ]
     },
     {
         "id": 2,
@@ -13,7 +16,10 @@
         "company": "Ramos Soft",
         "salary": "130,000.00",
         "workPlace": "Benguela, Caponte",
-        "city": "Benguela"
+        "city": "Benguela",
+        "skills": [
+            "Photshop", "Adobe XD"
+        ]
     },
     {
         "id": 3,
@@ -21,6 +27,9 @@
         "company": "Primavera Angola",
         "salary": "90,000.00",
         "workPlace": "Huila, Benfica",
-        "city": "Huila"
+        "city": "Huila",
+        "skills": [
+            "Boostrap", "Jquery", "C#"
+        ]
     }
 ]
