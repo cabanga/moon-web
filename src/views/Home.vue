@@ -3,7 +3,7 @@
     <div class="bg-home">
       <div class="container container-home">
         <h2 class="text-center text-title ">
-          Plataforma 100% Angolana, para vagas de T.I.
+          {{ $t('titleDefaul') }}
         </h2> 
       </div>
     </div>
