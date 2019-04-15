@@ -33,8 +33,68 @@
 ==============================================================
 */
 
+.p-show{
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.btn-aplicar{
+  color: #b63c06 !important;
+  background-color: #fff;
+  border-color: #b63c06;
+  border-radius: 0px;
+  padding: 8px 30px!important;
+  transition: all 0.1s;
+}
+
+.btn-aplicar:hover{
+  color: #b63c06 !important;
+  background-color: #fff;
+  border-color: #b63c06;
+  border-radius: 0px;
+  padding: 8px 30px!important;
+  transition: all 0.1s;
+  box-shadow: #00000024 0px 0px 60px;
+}
+
+.btn.skills-list{
+  background-color: #b84506ab!important;
+  color: #fff;
+  margin: 0 4px;
+  font-size: 12px;
+  border-radius: 60px;
+}
+
+.card.card-moon-list{
+  background-color: #8c8c8c1a;
+  border: 0px solid rgba(0,0,0,.125);
+  border-radius: 0;
+  margin: 5px 0;
+}
+
+.card.card-moon-list:hover{
+  background-color: #8c8c8c1a;
+  border: 0px solid rgba(0,0,0,.125);
+  border-radius: 0;
+  margin: 5px 0;
+  -webkit-box-shadow: #8c8c8c1a 2px;
+  box-shadow: #00000012 -6px 0px 15px;
+  transition: 0.2s
+}
+
+a:hover {
+  color: #000;
+  text-decoration: none;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+  background-color: transparent;
+}
+
 .m15{
-  margin-top: 15%;
+  margin-top: 12%;
 }
 
 .p-text{
@@ -75,7 +135,7 @@
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
-  box-shadow: #00000038 0px -70px 74px;
+  box-shadow: #00000038 0px -90px 74px;
 }
 
 .bg-vacancies {

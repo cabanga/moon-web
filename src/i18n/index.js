@@ -23,7 +23,11 @@ const messages = {
         level: 'Nível',
         typeJob: 'Tipo de Trabalho',
         responsabily: 'Responsábilidade',
-        requeriment: 'Requisito'
+        requeriment: 'Requisito',
+        filterDevelopers: 'Buscar por skills',
+        publishVacancy: 'Publicar Vaga',
+        editVacancy: 'Editar Vaga',
+        titleVacancy: 'Titulo da vaga'
     },
     'en': {
         titleDefaul: '100% Angolan platform, for T.I.',
@@ -44,7 +48,10 @@ const messages = {
         level: '',
         typeJob: '',
         responsabily: '',
-        requeriment: ''
+        requeriment: '',
+        filterDevelopers: '',
+        publishVacancy: 'Publish vacancy',
+        editVacancy: ''
     }
 }
 

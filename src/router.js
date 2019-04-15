@@ -7,6 +7,8 @@ import Dasboard from './views/Dasboard.vue'
 import Login from './views/Login.vue'
 import Vacancies from './components/Vacancy'
 import VacancyShow from './components/Vacancy/Show'
+import VacancyEdit from './components/Vacancy/Edit'
+import VacancyNew from './components/Vacancy/New'
 
 
 Vue.use(Router)
@@ -28,13 +30,35 @@ let router = new Router({
       path: '/vacancies',
       name: 'vacancies',
       component: Vacancies,
-      children: [
-        { path: ':show', component: VacancyShow }
-      ],
       meta: {
         requiresGuest: true
       }
     },
+    {
+      path: '/vacancies/show', 
+      name: 'vacancy',
+      component: VacancyShow,  
+      meta: {
+        requiresGuest: true
+      }
+    },
+    {
+      path: '/vacancies/new', 
+      name: 'vacancy-new',
+      component: VacancyNew,  
+      meta: {
+        requiresGuest: true
+      }
+    },
+    {
+      path: '/vacancies/edit', 
+      name: 'vacancy-edit',
+      component: VacancyEdit,  
+      meta: {
+        requiresGuest: true
+      }
+    },
+
     {
       path: '/dasboard',
       name: 'dasboard',

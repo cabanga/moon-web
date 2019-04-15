@@ -3,9 +3,12 @@
       <div class="bg-vacancies">
         <div class="container container-home">
           <br>
-          <h2 class="text-center text-title under-text">
-            {{ $t('titleDefaul') }}
-          </h2>
+
+          <h3 class="text-center text-title under-text">{{ $t('filterDevelopers') }}</h3>
+          <input type="text" class="form-control" placeholder="Selecione o filtro">
+         
+          <!-- <v-select :options="['foo', 'bar', 'baz']"></v-select> -->
+
         </div>
       </div>
 
@@ -49,3 +52,4 @@
     }
   }
 </script>
+

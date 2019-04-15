@@ -2,10 +2,11 @@
     {
         "id": 1,
         "title": "Programdor web Ruby On Rails",
-        "company": "Unitel",
+        "company": "Kianda Stream, Lda",
         "salary": "300,000.00",
         "workPlace": "Luanda, Samba",
         "city": "Luanda",
+        "description": "",
         "skills": [
             "Boostrap", "Jquery", "Ruby Puro"
         ]
@@ -17,6 +18,7 @@
         "salary": "130,000.00",
         "workPlace": "Benguela, Caponte",
         "city": "Benguela",
+        "description": "",
         "skills": [
             "Photshop", "Adobe XD"
         ]
@@ -28,6 +30,7 @@
         "salary": "90,000.00",
         "workPlace": "Huila, Benfica",
         "city": "Huila",
+        "description": "",
         "skills": [
             "Boostrap", "Jquery", "C#"
         ]
