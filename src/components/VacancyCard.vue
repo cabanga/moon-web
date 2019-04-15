@@ -1,7 +1,7 @@
 <template>
     <div class="col-sm-4">
         <div class="card card-moon">
-            
+
             <div class="card-title">
                 <br>
                 <h5 class="text-center color-default">{{vacancy.title}}</h5>
@@ -19,9 +19,9 @@
 </template>
 
 <script>
-    export default {
-        props: {
-            vacancy: Object
-        }
+  export default {
+    props: {
+      vacancy: Object
     }
+  }
 </script>

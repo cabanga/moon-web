@@ -5,9 +5,8 @@
   </div>
 </template>
 
-
 <script>
-  import NavBar from '@/components/NavBar.vue';
+  import NavBar from '@/components/NavBar.vue'
 
   export default {
     components: {
@@ -15,7 +14,7 @@
     },
     computed: {
       isBlack: function () {
-        return this.$route.name === 'login' ? true : false
+        return this.$route.name === 'login'
       }
     }
   }

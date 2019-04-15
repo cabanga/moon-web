@@ -16,7 +16,7 @@ module.exports = {
         'baseIndent': 1
       }
     ],
-    "space-before-function-paren": ["error", "always"]
+    'space-before-function-paren': ['error', 'always']
   },
   parserOptions: {
     parser: 'babel-eslint'

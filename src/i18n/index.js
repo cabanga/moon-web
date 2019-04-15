@@ -1,5 +1,5 @@
-import Vue from 'vue';
-import VueI18n from 'vue-i18n';
+import Vue from 'vue'
+import VueI18n from 'vue-i18n'
 
 Vue.use(VueI18n)
 
@@ -14,7 +14,7 @@ const messages = {
 
 const i18n = new VueI18n({
     locale: 'pt', // set locale
-    messages, // set locale messages
+    messages // set locale messages
 })
 
 export default i18n

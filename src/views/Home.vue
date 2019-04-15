@@ -4,7 +4,7 @@
       <div class="container container-home">
         <h2 class="text-center text-title ">
           {{ $t('titleDefaul') }}
-        </h2> 
+        </h2>
       </div>
     </div>
 
