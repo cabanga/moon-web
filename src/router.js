@@ -3,9 +3,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
-import About from './views/About.vue'
 import Dasboard from './views/Dasboard.vue'
 import Login from './views/Login.vue'
+import Vacancies from './views/Vacancies.vue'
 
 Vue.use(Router)
 
@@ -23,9 +23,9 @@ let router = new Router({
       }
     },
     {
-      path: '/about',
-      name: 'about',
-      component: About,
+      path: '/vacancies',
+      name: 'vacancies',
+      component: Vacancies,
       meta: {
         requiresGuest: true
       }
@@ -50,11 +50,9 @@ let router = new Router({
 })
 
 // ========================== Nav Guard ==========================
-var TOKEN = localStorage.getItem('currentToken')
-
 router.beforeEach((to, from, next) => {
   if (to.matched.some(record => record.meta.requiresAuth)) {
-    if (!TOKEN) {
+    if (!localStorage.getItem('currentToken')) {
       next({
         path: '/login',
         query: { redirect: to.fullPath }
@@ -63,7 +61,7 @@ router.beforeEach((to, from, next) => {
       next()
     }
   } else if (to.matched.some(record => record.meta.requiresGuest)) {
-    if (TOKEN) {
+    if (localStorage.getItem('currentToken')) {
       next({
         path: '/dasboard',
         query: { redirect: to.fullPath }

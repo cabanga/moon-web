@@ -24,7 +24,9 @@
     methods: {
       logOut() {       
         signOut()
-        .then((res) => this.$router.push('/'))
+        .then(() => {
+          this.$router.push('/')
+        })
       }
     }
   }

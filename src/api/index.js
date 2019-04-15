@@ -51,8 +51,9 @@ export function facebookAutProvider () {
 export function signOut () {
   return new Promise((resolve, reject) => {
     firebase.auth().signOut()
-    .then(res => {
+    .then(() => {
       localStorage.removeItem('currentToken')
+      
       console.log('remove currentToken !!!')
       resolve(true)
     }).catch(error => {
