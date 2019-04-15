@@ -27,7 +27,8 @@
                             <router-link class="nav-link" to="/login">Login</router-link>
                         </li>
                         <li class="nav-item">
-                            <router-link class="nav-link btn btnGetStarted btn-sm btn-get-start" to="/">Get Started</router-link>
+                            <router-link v-if="userLogged" class="nav-link btn btnGetStarted btn-sm btn-get-start" to="/">Publish vacancy</router-link>
+                            <router-link v-else class="nav-link btn btnGetStarted btn-sm btn-get-start" to="/">Get Started</router-link>
                         </li>
                     </ul>
                 </div>
@@ -42,3 +43,13 @@
     margin-bottom: 3%;
   }
 </style>
+
+<script>
+    export default {
+        computed: {
+            userLogged: function () {
+                return localStorage.getItem('currentToken') ? true : false
+            }
+        }
+    }
+</script>
