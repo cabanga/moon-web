@@ -24,11 +24,12 @@
 
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <router-link class="nav-link" to="/login">Login</router-link>
-                        </li>
-                        <li class="nav-item">
                             <router-link v-if="userLogged" class="nav-link btn btnGetStarted btn-sm btn-get-start" to="/">Publish vacancy</router-link>
                             <router-link v-else class="nav-link btn btnGetStarted btn-sm btn-get-start" to="/">Get Started</router-link>
+                        </li>
+                        <li class="nav-item">
+                            <router-link v-if="userLogged" class="nav-link" to="/login">LogOut</router-link>
+                            <router-link v-else class="nav-link" to="/login">LogIn</router-link>
                         </li>
                     </ul>
                 </div>
