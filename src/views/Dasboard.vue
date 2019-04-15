@@ -7,8 +7,8 @@
 </template>
 
 <script>
-/* eslint-disable */
-// eslint-disable-next-line
+  /* eslint-disable */
+  // eslint-disable-next-line
 
   import { signOut } from '@/api';
 

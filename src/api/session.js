@@ -22,3 +22,17 @@ export function setCurrentUser (currentUser) {
     console.log('same error to set currentUser !!!')
   }
 }
+
+// ================== SET OBJECT OF CURRENT USER ===============
+export function userLogged () {
+  try {
+    if(localStorage.getItem('currentToken')){
+      return true
+    }
+    else{
+      return false
+    }
+  }catch {
+    console.log('same error to set currentUser !!!')
+  }
+}
