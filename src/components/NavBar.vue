@@ -45,6 +45,8 @@
 </style>
 
 <script>
+    /* eslint-disable */
+    // eslint-disable-next-line
     export default {
         computed: {
             userLogged: function () {

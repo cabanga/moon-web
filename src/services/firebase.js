@@ -1,4 +1,6 @@
 // Initialize Firebase
+/* eslint-disable */
+// eslint-disable-next-line
 
 export default {
   apiKey: 'AIzaSyClpRXv6ZWYvhaaqUUSqPGAiw0JucQdIf8',
