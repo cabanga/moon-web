@@ -1,6 +1,7 @@
 <template>
   <div class="col-sm-12">
-    <router-link to="/vacancies/:show">
+    <router-link :to="{name: 'vacancy', params: {id: vacancy.id}}">
+      
       <div class="card card-moon-list ">
         <div class="row">
           <div class="col-sm-12 col-md-6">
@@ -14,9 +15,7 @@
           </div>
           <div class="col-sm-12 col-md-6">
             <div class="card-body">
-
               <span class="btn skills-list" v-for="skill in vacancy.skills" :key="skill.index">{{skill}}</span>
-
             </div>
           </div>
         </div>

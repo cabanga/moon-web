@@ -13,10 +13,10 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <router-link class="nav-link" to="/">Home <span class="sr-only">(current)</span></router-link>
+              <router-link class="nav-link" :to="{name: 'home'}">Home <span class="sr-only">(current)</span></router-link>
             </li>
             <li class="nav-item">
-              <router-link class="nav-link" to="/vacancies">Vacancies</router-link>
+              <router-link class="nav-link" :to="{name: 'vacancies'}">Vacancies</router-link>
             </li>
           </ul>
 
@@ -25,7 +25,7 @@
               <router-link class="nav-link btn btnGetStarted btn-sm btn-get-start" to="/">Get Started</router-link>
             </li>
             <li class="nav-item">
-              <router-link class="nav-link" to="/login">Login</router-link>
+              <router-link class="nav-link" :to="{name: 'login'}">Login</router-link>
             </li>
           </ul>
         </div>

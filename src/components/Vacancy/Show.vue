@@ -1,7 +1,10 @@
 <template>
     <div class="">
+
       <div class="bg-vacancies">
         <div class="container container-home">
+          <h2 class="text-center text-title under-text">{{ id }}</h2>
+
           <br>
           <h2 class="text-center text-title under-text">{{vacancy.title}}</h2>
         </div>
@@ -50,6 +53,7 @@
           ]
         }
       }
-    }
+    },
+    props: ["id"]
   }
 </script>

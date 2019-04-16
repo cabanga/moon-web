@@ -9,6 +9,7 @@ import Vacancies from './components/Vacancy'
 import VacancyShow from './components/Vacancy/Show'
 import VacancyEdit from './components/Vacancy/Edit'
 import VacancyNew from './components/Vacancy/New'
+import NotFountComponent from './components/404'
 
 
 Vue.use(Router)
@@ -18,6 +19,10 @@ let router = new Router({
   base: process.env.BASE_URL,
 
   routes: [
+    {
+      path: '*',
+      component: NotFountComponent
+    },
     {
       path: '/',
       name: 'home',
@@ -35,9 +40,10 @@ let router = new Router({
       }
     },
     {
-      path: '/vacancies/show', 
+      path: '/vacancies/:id', 
       name: 'vacancy',
-      component: VacancyShow,  
+      component: VacancyShow,
+      props: true,
       meta: {
         requiresGuest: true
       }

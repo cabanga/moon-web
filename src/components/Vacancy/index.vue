@@ -20,8 +20,7 @@
 
           <div class="col-sm-9">
             <div class="row no-padding">
-              <VacancyList v-for="vac in dataVacancies" :vacancy="vac" :key="vac.id">
-              </VacancyList>
+              <VacancyList v-for="vac in dataVacancies" :vacancy="vac" :key="vac.id"></VacancyList>
             </div>
           </div>
         </div>
