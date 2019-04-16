@@ -38,6 +38,7 @@
   
   import VacancyList from '@/components/VacancyList.vue';
   import dataV from '@/api/data.json'
+  import {getVacancies} from '@/api'
 
   export default {
     name: 'home',
@@ -48,7 +49,18 @@
     },
     components: {
       VacancyList
+    },
+    created () {
+      getVacancies()
+      .then(response => {
+        console.log(response);
+      })
+      .catch(error => {
+        console.log(error);
+      })
+      
     }
+
   }
 </script>
 

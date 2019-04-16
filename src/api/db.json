@@ -1,0 +1,20 @@
+{
+  "vacancies":[
+    {
+      "id": 1,
+      "title": "Programador Python",
+      "description": "Nada haver",
+      "typeCompany": 1,
+      "localization": "morro bento",
+      "level": 1,
+      "typeJob": "2",
+      "responsabily": "bom dia angoola",
+      "requeriment": "Muitos anos de expericncias",
+      "otherBenefits": "oferecemos bom salario e outrs",
+      "user_id": 1,
+      "skills": [
+        "Photshop", "Adobe XD"
+      ]
+    }
+  ]
+}
