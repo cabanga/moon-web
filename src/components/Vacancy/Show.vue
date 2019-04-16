@@ -3,8 +3,6 @@
 
       <div class="bg-vacancies">
         <div class="container container-home">
-          <h2 class="text-center text-title under-text">{{ id }}</h2>
-
           <br>
           <h2 class="text-center text-title under-text">{{vacancy.title}}</h2>
         </div>
@@ -37,23 +35,25 @@
 </template>
 
 <script>
+  import {getVacancy} from '@/api'
+
   export default {
+    props: ["id"],
     data () {
       return {
-        vacancy: {
-          "id": 1,
-          "title": "Programdor web Ruby On Rails",
-          "company": "Kianda Stream, Lda",
-          "salary": "300,000.00",
-          "workPlace": "Luanda, Samba",
-          "city": "Luanda",
-          "description": "A Moon oferece um cadastro de maneira intuitiva e simples, bem como testes com os quais você pode demonstrar suas habilidades. Em pouco tempo consegui agendar entrevistas e estar inserido no mercado.",
-          "skills": [
-            "Boostrap", "Jquery", "Ruby Puro"
-          ]
-        }
+        vacancy: {}
       }
     },
-    props: ["id"]
+    created () {
+      getVacancy (this.id)
+      .then(vacancy => {
+        console.log("vacancy, return : ", vacancy);
+        
+        this.vacancy = vacancy
+      })
+      .catch(error => {
+        console.log(error);
+      })
+    }
   }
 </script>

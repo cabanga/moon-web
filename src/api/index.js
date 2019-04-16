@@ -1,7 +1,6 @@
 /* eslint func-call-spacing: ["error", "never"] */
 /* eslint function-paren-newline: ["error", "multiline"] */
 /* eslint-disable */
-// global localStorage
 import Axios from 'axios'
 import firebase from 'firebase/app'
 require('firebase/auth')
@@ -12,12 +11,22 @@ const BASE_URL = process.env.API_URL || 'http://localhost:3000'
 // const BASE_URL = process.env.API_URL || 'https://moon--api.herokuapp.com'
 // https://moon--api.herokuapp.com/api/v1/vacancies
 
+
+
+const apiClient = Axios.create({
+  baseURL: 'http://localhost:3000',
+  withCredentials: false,
+  headers: {
+    Accept: 'application/json',
+    'Content-Type': 'application/json'
+  }
+})
+
 // ============================== GET VACANCIES =============================
 export function getVacancies () {
   return new Promise((resolve, reject) => {
-    Axios.get(`${BASE_URL}/vacancies`)
+    apiClient.get('/vacancies')
     .then(response => {
-      console.log("success full connection");
       resolve(response.data)
     })
     .catch(error => {
@@ -27,12 +36,25 @@ export function getVacancies () {
   })
 }
 
+// ============================== GET VACANCY =============================
+export function getVacancy (id) {
+  return new Promise((resolve, reject) => {
+    apiClient.get('/vacancies/' + id)
+    .then(response => {
+      resolve(response.data)
+    })
+    .catch(error => {
+      console.log("error to get vacancy");
+      reject(error.message)
+    })
+  })
+}
+
 // ============================== GET 3 LASTS VACANCIES =============================
 export function getLastVacancies () {
   return new Promise((resolve, reject) => {
-    Axios.get(`${BASE_URL}/vacancies`)
+    apiClient.get('/vacancies')
     .then(response => {
-      console.log("success full connection");
       resolve(response.data)
     })
     .catch(error => {
