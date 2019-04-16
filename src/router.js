@@ -53,7 +53,7 @@ let router = new Router({
       name: 'vacancy-new',
       component: VacancyNew,  
       meta: {
-        requiresGuest: true
+        requiresGuest: false
       }
     },
     {

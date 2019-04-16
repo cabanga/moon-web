@@ -15,7 +15,7 @@
           </div>
           <div class="col-sm-12 col-md-6">
             <div class="card-body">
-              <span class="btn skills-list" v-for="skill in vacancy.skills" :key="skill.index">{{skill}}</span>
+              <span class="btn skills-list" v-for="skill in skills(vacancy.skills)" :key="skill.index">{{skill}}</span>
             </div>
           </div>
         </div>
@@ -29,6 +29,16 @@
   export default {
     props: {
       vacancy: Object
+    },
+    methods: {
+      skills(skillsList) {
+        var k = skillsList
+        k = k.replace(/'/g, '"');
+        k = JSON.parse(k)
+        console.log("meu array : ", k);
+        
+        return k;
+      }
     }
   }
 </script>

@@ -27,7 +27,7 @@
           <div class="col">
             <p>{{vacancy.description}}</p>
             <br>
-            <span class="btn skills-list" v-for="skill in vacancy.skills" :key="skill.index">{{skill}}</span>
+            <span class="btn skills-list" v-for="skill in skills(vacancy.skills)" :key="skill.index">{{skill}}</span>
           </div>
         </div>
       </div>
@@ -47,13 +47,22 @@
     created () {
       getVacancy (this.id)
       .then(vacancy => {
-        console.log("vacancy, return : ", vacancy);
-        
         this.vacancy = vacancy
       })
       .catch(error => {
         console.log(error);
       })
+    },
+    methods: {
+      skills(skillsList) {
+        var k = skillsList
+        if (!k) {
+          return k;
+        }
+        k = k.replace(/'/g, '"')
+        k = JSON.parse(k)
+        return k;
+      }
     }
   }
 </script>

@@ -3,6 +3,7 @@
     <button v-on:click="logOut" class="list-group-item list-group-item-action bg-light">Logout</button>
 
     <h1>This is an Dasboard page</h1>
+    <h2>Teste store {{$store.state.user}}</h2>
   </div>
 </template>
 

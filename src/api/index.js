@@ -7,14 +7,15 @@ require('firebase/auth')
 import { setToken } from '../api/session'
 
 
-const BASE_URL = process.env.API_URL || 'http://localhost:3000'
+// const BASE_URL = process.env.API_URL || 'http://localhost:3000'
 // const BASE_URL = process.env.API_URL || 'https://moon--api.herokuapp.com'
 // https://moon--api.herokuapp.com/api/v1/vacancies
 
 
 
 const apiClient = Axios.create({
-  baseURL: 'http://localhost:3000',
+//  baseURL: 'http://localhost:3000',
+  baseURL: 'https://moon--api.herokuapp.com/api/v1',
   withCredentials: false,
   headers: {
     Accept: 'application/json',
