@@ -1,38 +1,19 @@
 [
     {
-        "id": 1,
+        "id": "001222ss",
         "title": "Programdor web Ruby On Rails",
-        "company": "Kianda Stream, Lda",
-        "salary": "300,000.00",
-        "workPlace": "Luanda, Samba",
+        "category": "FullStak",
+        "level": "Pleno",
+        "skills": ["Boostrap", "Jquery", "Ruby Puro", "Rails"],
+        "CompanyName": "Kianda Stream, Lda",
+        "location": "Maianga, Rua 2",
         "city": "Luanda",
+        "salary": "300,000.00",
         "description": "A Moon oferece um cadastro de maneira intuitiva e simples, bem como testes com os quais você pode demonstrar suas habilidades. Em pouco tempo consegui agendar entrevistas e estar inserido no mercado.",
-        "skills": [
-            "Boostrap", "Jquery", "Ruby Puro"
-        ]
-    },
-    {
-        "id": 2,
-        "title": "Web design",
-        "company": "Ramos Soft",
-        "salary": "130,000.00",
-        "workPlace": "Benguela, Caponte",
-        "city": "Benguela",
-        "description": "A Moon oferece um cadastro de maneira intuitiva e simples, bem como testes com os quais você pode demonstrar suas habilidades. Em pouco tempo consegui agendar entrevistas e estar inserido no mercado.",
-        "skills": [
-            "Photshop", "Adobe XD"
-        ]
-    },
-    {
-        "id": 3,
-        "title": ".Net Developer",
-        "company": "Primavera Angola",
-        "salary": "90,000.00",
-        "workPlace": "Huila, Benfica",
-        "city": "Huila",
-        "description": "A Moon oferece um cadastro de maneira intuitiva e simples, bem como testes com os quais você pode demonstrar suas habilidades. Em pouco tempo consegui agendar entrevistas e estar inserido no mercado.",
-        "skills": [
-            "Boostrap", "Jquery", "C#"
-        ]
+        "responsibilities": "",
+        "requirements": "",
+        "bonus": ["Transporte", "Alimentação", "Plafom de compras mensal"]
     }
 ]
+
+

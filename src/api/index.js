@@ -7,13 +7,15 @@ import firebase from 'firebase/app'
 require('firebase/auth')
 import { setToken } from '../api/session'
 
-const BASE_URL = process.env.API_URL || 'https://moon--api.herokuapp.com'
+
+const BASE_URL = process.env.API_URL || 'http://localhost:3000'
+// const BASE_URL = process.env.API_URL || 'https://moon--api.herokuapp.com'
 // https://moon--api.herokuapp.com/api/v1/vacancies
 
 // ============================== GET VACANCIES =============================
 export function getVacancies () {
   return new Promise((resolve, reject) => {
-    Axios.get(`${BASE_URL}/api/v1/vacancies`)
+    Axios.get(`${BASE_URL}/vacancies`)
     .then(response => {
       console.log("success full connection");
       resolve(response.data)
@@ -24,6 +26,22 @@ export function getVacancies () {
     })
   })
 }
+
+// ============================== GET 3 LASTS VACANCIES =============================
+export function getLastVacancies () {
+  return new Promise((resolve, reject) => {
+    Axios.get(`${BASE_URL}/vacancies`)
+    .then(response => {
+      console.log("success full connection");
+      resolve(response.data)
+    })
+    .catch(error => {
+      console.log("error to get vacancies");
+      reject(error.message)
+    })
+  })
+}
+
 
 // ================================== LOGIN =================================
 export function signIn (creandials) {

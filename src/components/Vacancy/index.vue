@@ -20,7 +20,7 @@
 
           <div class="col-sm-9">
             <div class="row no-padding">
-              <VacancyList v-for="vac in dataVacancies" :vacancy="vac" :key="vac.id"></VacancyList>
+              <VacancyList v-for="vac in vacanciesList" :vacancy="vac" :key="vac.id" />
             </div>
           </div>
         </div>
@@ -37,14 +37,13 @@
   /* eslint-disable */
   
   import VacancyList from '@/components/VacancyList.vue';
-  import dataV from '@/api/data.json'
   import {getVacancies} from '@/api'
 
   export default {
     name: 'home',
     data () {
       return {
-        dataVacancies: dataV
+        vacanciesList: []
       }
     },
     components: {
@@ -52,13 +51,12 @@
     },
     created () {
       getVacancies()
-      .then(response => {
-        console.log(response);
+      .then(vacancies => {
+        this.vacanciesList = vacancies
       })
       .catch(error => {
         console.log(error);
       })
-      
     }
 
   }

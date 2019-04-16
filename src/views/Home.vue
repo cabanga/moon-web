@@ -12,7 +12,7 @@
     <div class="container m15">
       
       <div class="row no-padding">
-        <VacancyCard v-for="vac in dataVacancies" :vacancy="vac" :key="vac.id">
+        <VacancyCard v-for="vac in lastVacancies" :vacancy="vac" :key="vac.id">
         </VacancyCard>
       </div>
 
@@ -39,18 +39,27 @@
   /* eslint function-paren-newline: ["error", "multiline"] */
   /* eslint-disable */
   
-  import VacancyCard from '@/components/VacancyCard.vue';
-  import dataV from '@/api/data.json'
+  import VacancyCard from '@/components/VacancyCard.vue'
+  import {getLastVacancies} from '@/api'
 
   export default {
     name: 'home',
     data () {
       return {
-        dataVacancies: dataV
+        lastVacancies: []
       }
     },
     components: {
       VacancyCard
+    },
+    created () {
+      getLastVacancies()
+      .then(vacancies => {
+        this.lastVacancies = vacancies
+      })
+      .catch(error => {
+        console.log(error);
+      })
     }
   }
 </script>
