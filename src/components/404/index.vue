@@ -1,28 +1,27 @@
 <template>
     <div>
-        <div class="container">
-            <div  class="error">
-                <p class="p">4</p>
-                <span class="dracula">			
-                    <div class="con">
-                        <div class="hair"></div>
-                        <div class="hair-r"></div>
-                        <div class="head"></div>
-                    <div class="eye"></div>
-                    <div class="eye eye-r"></div>
-                    <div class="mouth"></div>
-                    <div class="blod"></div>
-                    <div class="blod blod2"></div>
-                    </div>
-                </span>
-                <p class="p">4</p>
-                
-                <div class="page-ms">
-                    <router-link class="go-back" :to="{name: 'home'}">Voltar para Home</router-link>
-
-                </div>
+      <div class="container">
+        <div  class="error">
+            <p class="p">4</p>
+            <span class="dracula">			
+              <div class="con">
+                <div class="hair"></div>
+                <div class="hair-r"></div>
+                <div class="head"></div>
+                <div class="eye"></div>
+                <div class="eye eye-r"></div>
+                <div class="mouth"></div>
+                <div class="blod"></div>
+                <div class="blod blod2"></div>
+              </div>
+            </span>
+            <p class="p">4</p>
+            
+            <div class="page-ms">
+              <router-link class="go-back" :to="{name: 'home'}">Voltar para Home</router-link>
             </div>
         </div>
+      </div>
 
     </div>
 </template>
@@ -73,24 +72,22 @@ body{
 	font-family: 'Combo', cursive;
 }
 
-
-.con {
-    width: 500px;
-    height: 500px;
-    position: relative;
-    margin: 9% auto 0;
-    animation: ani9 0.7s ease-in-out infinite  alternate ;
+.con{
+  width: 500px;
+  height: 500px;
+  position: relative;
+  margin: 9% auto 0;
+  animation: ani9 0.7s ease-in-out infinite  alternate ;
 }
 
 @keyframes ani9 {
-    0%{
+  0%{
     transform: translateY(10px);	
   }
   
   100%{
     transform: translateY(30px);	
   }
-
 }
 
 
@@ -108,6 +105,7 @@ body{
   transform: rotate(45deg);
   background: #b63c06;
 }
+
 .hair-r{
   left: 20px;
   width: 210px;
@@ -116,8 +114,8 @@ body{
   border-radius: 0 50% 0 50%;
   transform: rotate(45deg);
   background: #b63c06;
-
 }
+
 .head {
   width: 200px;
   height: 200px;
@@ -125,6 +123,7 @@ body{
   border-radius: 0 50% 0 50%;
   transform: rotate(45deg);
 }
+
 .eye {
  width: 20px; height:20px;
   background: #111113;
@@ -132,6 +131,7 @@ body{
   top: 15%; left: 11.5%;
   transition: .3s linear;
 }
+
 .eye-r{left: 24%;}
 
 .mouth {
@@ -142,14 +142,14 @@ body{
   left: 14%;
   border-radius: 50% / 0 0 100% 100%;
 }
-.mouth::after{
 
+.mouth::after{
   border-left: 5px solid transparent;
   border-right: 5px solid transparent;
   border-top: 13px solid #FFFFFF;
   left: 10px;
-  
 }
+
 .mouth::before{
   border-left: 5px solid transparent;
   border-right: 5px solid transparent;
@@ -164,14 +164,15 @@ body{
   top: 23%; left: 17%; 
   border-radius: 20px;
 }
+
 .blod::after{
-   width: 2px;
+  width: 2px;
   height: 10px;
   background: #FFF;
   top: 20%; left: 10%; 
-  border-radius: 20px;
-  
+  border-radius: 20px;  
 }
+
 .blod2 {
   top: 23%; left: 20%;
   width: 13px;
@@ -181,10 +182,11 @@ body{
   animation: blod 2s linear infinite;
   opacity: 0;
 }
+
 @keyframes blod {
   0%   {opacity: 1;}  
   100%   {background:red; opacity: 0; top:50%;}
-  }
+}
 
 /* page-ms */
 .page-ms {transform: translateY(-50px);}
@@ -211,7 +213,5 @@ body{
 	margin-top: 18px;
 }
 
-    button:hover {box-shadow: 0 0 20px 0 #C0D7DD;}
-
-
+  button:hover {box-shadow: 0 0 20px 0 #C0D7DD;}
 </style>
