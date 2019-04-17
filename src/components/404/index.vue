@@ -3,7 +3,7 @@
       <div class="container">
         <div  class="error">
             <p class="p">4</p>
-            <span class="dracula">			
+            <span class="dracula">
               <div class="con">
                 <div class="hair"></div>
                 <div class="hair-r"></div>
@@ -16,7 +16,7 @@
               </div>
             </span>
             <p class="p">4</p>
-            
+
             <div class="page-ms">
               <router-link class="go-back" :to="{name: 'home'}">Voltar para Home</router-link>
             </div>
@@ -64,7 +64,7 @@ body{
 
 .error .p {
 	height: 100%;
-	color: #b63c06; 
+	color: #b63c06;
 	font-size: 280px;
 	margin: 50px;
 	display: inline-block;
@@ -82,14 +82,13 @@ body{
 
 @keyframes ani9 {
   0%{
-    transform: translateY(10px);	
+    transform: translateY(10px);
   }
-  
+
   100%{
-    transform: translateY(30px);	
+    transform: translateY(30px);
   }
 }
-
 
 .con > * {
   position: absolute;
@@ -135,7 +134,7 @@ body{
 .eye-r{left: 24%;}
 
 .mouth {
-  width: 60px; 
+  width: 60px;
   height: 20px;
   background: #840021;
   top: 20%;
@@ -161,7 +160,7 @@ body{
   width: 8px;
   height: 20px;
   background: #840021;
-  top: 23%; left: 17%; 
+  top: 23%; left: 17%;
   border-radius: 20px;
 }
 
@@ -169,8 +168,8 @@ body{
   width: 2px;
   height: 10px;
   background: #FFF;
-  top: 20%; left: 10%; 
-  border-radius: 20px;  
+  top: 20%; left: 10%;
+  border-radius: 20px;
 }
 
 .blod2 {
@@ -184,7 +183,7 @@ body{
 }
 
 @keyframes blod {
-  0%   {opacity: 1;}  
+  0%   {opacity: 1;}
   100%   {background:red; opacity: 0; top:50%;}
 }
 
@@ -193,7 +192,7 @@ body{
 
 .error p.page-msg {
 	text-align: center;
-	color: #C0D7DD; 
+	color: #C0D7DD;
 	font-size: 30px;
 	font-family: 'Combo', cursive;
 	margin-bottom: 20px;

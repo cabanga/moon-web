@@ -3,7 +3,7 @@
       <div class="row">
 
         <div class="col">
-          
+
           <div class="form-group">
             <label for="inputTitle">{{ $t('titleVacancy') }}</label>
             <input v-model="title" type="" id="inputTitle" class="form-control" placeholder="Title" required="" autofocus="">
@@ -39,7 +39,7 @@
     },
 
     methods: {
-      createVacancy() {
+      createVacancy () {
         // const creandials = {email: this.email, password: this.password}
       }
     }

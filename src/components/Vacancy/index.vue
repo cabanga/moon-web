@@ -6,7 +6,7 @@
 
           <h3 class="text-center text-title under-text">{{ $t('filterDevelopers') }}</h3>
           <input type="text" class="form-control" placeholder="Selecione o filtro">
-         
+
           <!-- <v-select :options="['foo', 'bar', 'baz']"></v-select> -->
 
         </div>
@@ -26,10 +26,8 @@
         </div>
       </div>
 
-
     </div>
 </template>
-
 
 <script>
   /* eslint func-call-spacing: ["error", "never"] */

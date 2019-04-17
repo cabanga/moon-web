@@ -11,7 +11,6 @@ import VacancyEdit from './components/Vacancy/Edit'
 import VacancyNew from './components/Vacancy/New'
 import NotFountComponent from './components/404'
 
-
 Vue.use(Router)
 
 let router = new Router({
@@ -40,7 +39,7 @@ let router = new Router({
       }
     },
     {
-      path: '/vacancies/:id', 
+      path: '/vacancies/:id',
       name: 'vacancy',
       component: VacancyShow,
       props: true,
@@ -49,17 +48,17 @@ let router = new Router({
       }
     },
     {
-      path: '/vacancies/new', 
+      path: '/vacancies/new',
       name: 'vacancy-new',
-      component: VacancyNew,  
+      component: VacancyNew,
       meta: {
         requiresGuest: false
       }
     },
     {
-      path: '/vacancies/edit', 
+      path: '/vacancies/edit',
       name: 'vacancy-edit',
-      component: VacancyEdit,  
+      component: VacancyEdit,
       meta: {
         requiresGuest: true
       }

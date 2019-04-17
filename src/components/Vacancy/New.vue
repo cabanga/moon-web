@@ -13,7 +13,6 @@
     </div>
 </template>
 
-
 <script>
   /* eslint func-call-spacing: ["error", "never"] */
   /* eslint function-paren-newline: ["error", "multiline"] */

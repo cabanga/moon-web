@@ -35,33 +35,33 @@
 </template>
 
 <script>
-  import {getVacancy} from '@/api'
+  import { getVacancy } from '@/api'
 
   export default {
-    props: ["id"],
+    props: ['id'],
     data () {
       return {
         vacancy: {}
       }
     },
     created () {
-      getVacancy (this.id)
-      .then(vacancy => {
-        this.vacancy = vacancy
-      })
-      .catch(error => {
-        console.log(error);
-      })
+      getVacancy(this.id)
+        .then(vacancy => {
+          this.vacancy = vacancy
+        })
+        .catch(error => {
+          console.log(error)
+        })
     },
     methods: {
-      skills(skillsList) {
+      skills (skillsList) {
         var k = skillsList
         if (!k) {
-          return k;
+          return k
         }
         k = k.replace(/'/g, '"')
         k = JSON.parse(k)
-        return k;
+        return k
       }
     }
   }

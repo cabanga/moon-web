@@ -10,7 +10,7 @@
     </div>
 
     <div class="container m15">
-      
+
       <div class="row no-padding">
         <VacancyCard v-for="vac in lastVacancies" :vacancy="vac" :key="vac.id">
         </VacancyCard>
@@ -19,7 +19,7 @@
       <br>
       <br>
       <br>
-      
+
       <div>
         <h2 class="text-center text-title under-text">
           {{ $t('titleDefaul2') }}
@@ -27,7 +27,6 @@
         <p class="text-center text-d p-text">{{ $t('descriptionTitleDefault2') }}</p>
       </div>
 
-      
       <br>
       <br>
     </div>
