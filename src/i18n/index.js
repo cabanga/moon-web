@@ -27,7 +27,12 @@ const messages = {
         filterDevelopers: 'Buscar por skills',
         publishVacancy: 'Publicar Vaga',
         editVacancy: 'Editar Vaga',
-        titleVacancy: 'Titulo da vaga'
+        titleVacancy: 'Titulo da vaga',
+        otherBenefits: 'Outros beneficios',
+        responsibilities: 'Responsabilidades',
+        requirements: 'Requisitos',
+        category: 'Tipo'
+
     },
     'en': {
         titleDefaul: '100% Angolan platform, for T.I.',

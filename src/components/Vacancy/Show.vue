@@ -12,11 +12,24 @@
         <div class="row">
           <div class="col">
               <h3>{{vacancy.company}}</h3>
+              <p class="p-show"><strong>{{ $t('category') }} : </strong> <span>{{kind_job(vacancy.category)}}</span> </p>
+              <p class="p-show"><strong>{{ $t('level') }} : </strong> <span>{{kind_level(vacancy.level)}}</span> </p>
               <p class="p-show"><strong>{{ $t('salary') }} : </strong> <span>{{vacancy.salary}}</span> </p>
-              <p class="p-show"><strong>{{ $t('workPlace') }} : </strong> <span>{{vacancy.workPlace}}</span> </p>
+              <p class="p-show"><strong>{{ $t('workPlace') }} : </strong> <span>{{vacancy.location}}</span> </p>
               <p class="p-show"><strong>{{ $t('city') }} : </strong> <span>{{vacancy.city}}</span> </p>
-
-              <br>
+              
+              <hr>
+              <h4 class="p-show"><strong>{{ $t('responsibilities') }}</strong></h4>
+              <p class="p-show">{{vacancy.responsibilities}}</p>
+              
+              <hr>
+              <h4 class="p-show"><strong>{{ $t('requirements') }}</strong></h4>
+              <p class="p-show">{{vacancy.requirements}}</p>
+              
+              <hr>
+              <h4 class="p-show"><strong>{{ $t('otherBenefits') }}</strong></h4>
+              <p class="p-show" v-for="bonu in benefits(vacancy.bonus)" :key="bonu.index"> - {{bonu}}</p>
+              
               <br>
               <router-link class="btn btn-aplicar" to="/">Aplicar nesta vaga</router-link>
               <br>
@@ -36,6 +49,8 @@
 
 <script>
   import { getVacancy } from '@/api'
+  import { kindLevel, kindJob } from '@/controllers/enums'
+  import { skillsConvert } from '@/controllers'
 
   export default {
     props: ['id'],
@@ -54,14 +69,23 @@
         })
     },
     methods: {
-      skills (skillsList) {
-        var k = skillsList
-        if (!k) {
-          return k
+      benefits (bonus) {
+        var b = bonus
+        if (!b) {
+          return b
         }
-        k = k.replace(/'/g, '"')
-        k = JSON.parse(k)
-        return k
+        b = b.replace(/'/g, '"')
+        b = JSON.parse(b)
+        return b
+      },
+      kind_level (level) {
+        return kindLevel(level)
+      },
+      kind_job (category) {
+        return kindJob(category)
+      },
+      skills (skillsList) {
+        return skillsConvert(skillsList)
       }
     }
   }
