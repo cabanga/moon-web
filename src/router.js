@@ -35,7 +35,7 @@ let router = new Router({
       name: 'vacancies',
       component: Vacancies,
       meta: {
-        requiresGuest: true
+        requiresGuest: false
       }
     },
     {
@@ -44,7 +44,7 @@ let router = new Router({
       component: VacancyShow,
       props: true,
       meta: {
-        requiresGuest: true
+        requiresGuest: false
       }
     },
     {

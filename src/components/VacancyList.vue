@@ -1,7 +1,6 @@
 <template>
   <div class="col-sm-12">
     <router-link :to="{name: 'vacancy', params: {id: vacancy.id}}">
-
       <div class="card card-moon-list ">
         <div class="row">
           <div class="col-sm-12 col-md-6">
@@ -20,7 +19,6 @@
           </div>
         </div>
       </div>
-
     </router-link>
   </div>
 </template>
@@ -35,8 +33,6 @@
         var k = skillsList
         k = k.replace(/'/g, '"')
         k = JSON.parse(k)
-        console.log('meu array : ', k)
-
         return k
       }
     }
