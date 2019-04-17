@@ -1,27 +1,28 @@
 
 export function kindLevel (level) {
   var l = ''
-  switch(level) {
+  switch (level) {
     case 0:
       l = 'Estagiário'
-      break;
+      break
     case 1:
       l = 'Junior'
-      break;
+      break
     case 2:
       l = 'Junior'
-      break;
+      break
     default:
       l = 'Senior'
   }
   return l
 }
 
-export function kindJob (level) {
+export function kindJob (job) {
   var l = ''
-  switch(level) {
+  switch (job) {
     case 0:
       l = 'Remoto'
+      break
     default:
       l = 'Presencial'
   }

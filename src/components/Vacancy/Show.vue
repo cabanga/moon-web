@@ -17,19 +17,19 @@
               <p class="p-show"><strong>{{ $t('salary') }} : </strong> <span>{{vacancy.salary}}</span> </p>
               <p class="p-show"><strong>{{ $t('workPlace') }} : </strong> <span>{{vacancy.location}}</span> </p>
               <p class="p-show"><strong>{{ $t('city') }} : </strong> <span>{{vacancy.city}}</span> </p>
-              
+
               <hr>
               <h4 class="p-show"><strong>{{ $t('responsibilities') }}</strong></h4>
               <p class="p-show">{{vacancy.responsibilities}}</p>
-              
+
               <hr>
               <h4 class="p-show"><strong>{{ $t('requirements') }}</strong></h4>
               <p class="p-show">{{vacancy.requirements}}</p>
-              
+
               <hr>
               <h4 class="p-show"><strong>{{ $t('otherBenefits') }}</strong></h4>
               <p class="p-show" v-for="bonu in benefits(vacancy.bonus)" :key="bonu.index"> - {{bonu}}</p>
-              
+
               <br>
               <router-link class="btn btn-aplicar" to="/">Aplicar nesta vaga</router-link>
               <br>
