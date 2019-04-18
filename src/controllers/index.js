@@ -2,7 +2,7 @@
 export function skillsConvert (skillsList) {
   var k = skillsList
   if (!k) {
-    return ""
+    return ''
   }
   k = k.replace(/'/g, '"')
   k = JSON.parse(k)

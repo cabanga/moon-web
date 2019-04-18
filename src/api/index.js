@@ -140,3 +140,18 @@ export function getLastVacancies () {
     })
   })
 }
+
+// ============================== GET MY VACANCIES =============================
+export function getMyVacancies () {
+  var myId = localStorage.getItem('currentUserId')
+  return new Promise((resolve, reject) => {
+    apiClient.get('/vacancies_uid/'+myId)
+    .then(response => {
+      resolve(response.data)
+    })
+    .catch(error => {
+      console.log("error to get vacancies");
+      reject(error.message)
+    })
+  })
+}

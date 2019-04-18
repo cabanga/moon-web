@@ -44,8 +44,8 @@
             <label for="inputCity">{{ $t('city') }}</label>
             <input v-model="city" type="text" id="inputCity" class="form-control" placeholder="Cidade" required="">
           </div>
-          
-        </div>          
+
+        </div>
       </div>
 
       <div class="row">
@@ -102,7 +102,8 @@
         description: null,
         responsibilities: null,
         requirements: null,
-        city: null
+        city: null,
+        skills: ''
       }
     },
 
@@ -114,27 +115,30 @@
         return optionsJobs()
       },
       createVacancy () {
-        console.log("submit form")
-        const vacancy = 
-        { 
-          title: this.title, category: this.category, level: this.level, 
-          companyName: this.companyName, location: this.location, salary: this.salary, 
-          description: this.description, responsibilities: this.responsibilities, 
-          requirements: this.requirements, city: this.city
-        }
-        postVacancy (vacancy)
-        .then(response => {
-          console.log("Post vacancy : ", response);
-          this.$router.go('/dasboard')
-
-        })
-        .catch(error => {
-          console.log("error to post vacancy : ", error);
-        })
-
+        console.log('submit form')
+        const vacancy =
+          {
+            title: this.title,
+            category: this.category,
+            level: this.level,
+            companyName: this.companyName,
+            location: this.location,
+            salary: this.salary,
+            description: this.description,
+            responsibilities: this.responsibilities,
+            requirements: this.requirements,
+            city: this.city
+          }
+        postVacancy(vacancy)
+          .then(response => {
+            console.log('Post vacancy : ', response)
+            this.$router.go('/dasboard')
+          })
+          .catch(error => {
+            console.log('error to post vacancy : ', error)
+          })
       }
     }
 
   }
 </script>
-

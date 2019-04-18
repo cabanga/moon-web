@@ -1,15 +1,40 @@
 <template>
   <div class="dashboard container">
-    <h1>This is an Dasboard page</h1>
+    <h1>My vacancies</h1>
+      <div class="row no-padding">
+      <VacancyCard v-for="vac in myVacancies" :vacancy="vac" :key="vac.id" />
+    </div>
   </div>
 </template>
 
 <script>
   /* eslint-disable */
   // eslint-disable-next-line
-  import { signOut } from '@/api';
+  import { getMyVacancies } from '@/api'
+  import VacancyCard from '@/components/VacancyCard.vue'
+
 
   export default {
+    name: 'dashboard',
+    data () {
+      return {
+        myVacancies: []
+      }
+    },
+    components: {
+      VacancyCard
+    },
+    created () {
+      getMyVacancies()
+      .then(res => {
+        this.myVacancies = res
+        console.log("my vacancies : ", this.myVacancies);
+        
+      })
+      .catch(error => {
+        console.log(error);
+      })
+    }
   }
 </script>
 
@@ -24,9 +49,3 @@
     color: #b63c06;
   }
 </style>
-
-<script>  
-  export default {
-    
-  }
-</script>
