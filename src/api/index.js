@@ -130,7 +130,7 @@ export function getVacancy (id) {
 // ============================== GET 3 LASTS VACANCIES =============================
 export function getLastVacancies () {
   return new Promise((resolve, reject) => {
-    apiClient.get('/vacancies')
+    apiClient.get('/vacancies_lasts')
     .then(response => {
       resolve(response.data)
     })

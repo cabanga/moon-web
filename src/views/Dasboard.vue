@@ -13,7 +13,6 @@
   import { getMyVacancies } from '@/api'
   import VacancyCard from '@/components/VacancyCard.vue'
 
-
   export default {
     name: 'dashboard',
     data () {
@@ -27,9 +26,7 @@
     created () {
       getMyVacancies()
       .then(res => {
-        this.myVacancies = res
-        console.log("my vacancies : ", this.myVacancies);
-        
+        this.myVacancies = res        
       })
       .catch(error => {
         console.log(error);
