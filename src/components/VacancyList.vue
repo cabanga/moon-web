@@ -24,17 +24,17 @@
 </template>
 
 <script>
+  import { skillsConvert } from '@/controllers'
+
   export default {
     props: {
       vacancy: Object
     },
     methods: {
       skills (skillsList) {
-        var k = skillsList
-        k = k.replace(/'/g, '"')
-        k = JSON.parse(k)
-        return k
+        return skillsConvert(skillsList)
       }
     }
   }
 </script>
+

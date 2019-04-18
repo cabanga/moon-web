@@ -1,31 +1,32 @@
 <template>
-  <div class="about">
-    <button v-on:click="logOut" class="list-group-item list-group-item-action bg-light">Logout</button>
-
+  <div class="dashboard container">
     <h1>This is an Dasboard page</h1>
-    <h2>Lord {{ userName }}</h2>
   </div>
 </template>
 
 <script>
   /* eslint-disable */
   // eslint-disable-next-line
-
   import { signOut } from '@/api';
 
   export default {
-    computed: {
-      userName(){
-        return this.$store.state.user.name
-      }
-    },
-    methods: {
-      logOut() {       
-        signOut()
-        .then(() => {
-          this.$router.push('/')
-        })
-      }
-    }
+  }
+</script>
+
+<style scoped>
+  .dashboard{
+    margin-top: -3%;
+  }
+  
+  .nav-link-m{
+    display: -webkit-inline-box;
+    padding: .5rem 1rem;
+    color: #b63c06;
+  }
+</style>
+
+<script>  
+  export default {
+    
   }
 </script>

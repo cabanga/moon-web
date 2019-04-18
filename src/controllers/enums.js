@@ -9,7 +9,7 @@ export function kindLevel (level) {
       l = 'Junior'
       break
     case 2:
-      l = 'Junior'
+      l = 'Pleno'
       break
     default:
       l = 'Senior'

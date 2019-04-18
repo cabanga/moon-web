@@ -11,7 +11,7 @@
       <div class="container m15">
         <div class="row">
           <div class="col">
-              <h3>{{vacancy.company}}</h3>
+              <h3>{{vacancy.companyName}}</h3>
               <p class="p-show"><strong>{{ $t('category') }} : </strong> <span>{{kind_job(vacancy.category)}}</span> </p>
               <p class="p-show"><strong>{{ $t('level') }} : </strong> <span>{{kind_level(vacancy.level)}}</span> </p>
               <p class="p-show"><strong>{{ $t('salary') }} : </strong> <span>{{vacancy.salary}}</span> </p>

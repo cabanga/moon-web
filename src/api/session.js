@@ -18,8 +18,18 @@ export function setToken (token) {
 export function setCurrentUser (currentUser) {
   try {
     localStorage.setItem('currentUser', JSON.stringify(currentUser))
+    setCurrentUseriD (currentUser.uid)
   }catch {
     console.log('same error to set currentUser !!!')
+  }
+}
+
+// ================== SET ID OF CURRENT USER ===============
+export function setCurrentUseriD (uid) {
+  try {
+    localStorage.setItem('currentUserId', uid)
+  }catch {
+    console.log('same error to set currentUser Id !!!')
   }
 }
 

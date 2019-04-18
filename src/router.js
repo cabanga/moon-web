@@ -25,34 +25,25 @@ let router = new Router({
     {
       path: '/',
       name: 'home',
-      component: Home,
-      meta: {
-        requiresGuest: false
-      }
+      component: Home
     },
     {
       path: '/vacancies',
       name: 'vacancies',
-      component: Vacancies,
-      meta: {
-        requiresGuest: false
-      }
+      component: Vacancies
     },
     {
-      path: '/vacancies/:id',
+      path: '/vacancies/details',
       name: 'vacancy',
       component: VacancyShow,
-      props: true,
-      meta: {
-        requiresGuest: false
-      }
+      props: true
     },
     {
-      path: '/vacancies/new',
-      name: 'vacancy-new',
+      path: '/vacancies/create',
+      name: 'vacancy-create',
       component: VacancyNew,
       meta: {
-        requiresGuest: false
+        requiresAuth: true
       }
     },
     {
@@ -60,13 +51,12 @@ let router = new Router({
       name: 'vacancy-edit',
       component: VacancyEdit,
       meta: {
-        requiresGuest: true
+        requiresAuth: true
       }
     },
-
     {
-      path: '/dasboard',
-      name: 'dasboard',
+      path: '/dashboard',
+      name: 'dashboard',
       component: Dasboard,
       meta: {
         requiresAuth: true
@@ -83,7 +73,7 @@ let router = new Router({
   ]
 })
 
-// ========================== Nav Guard ==========================
+// ==================== Nav Guard ====================
 router.beforeEach((to, from, next) => {
   if (to.matched.some(record => record.meta.requiresAuth)) {
     if (!localStorage.getItem('currentToken')) {
@@ -97,7 +87,7 @@ router.beforeEach((to, from, next) => {
   } else if (to.matched.some(record => record.meta.requiresGuest)) {
     if (localStorage.getItem('currentToken')) {
       next({
-        path: '/dasboard',
+        path: '/dashboard',
         query: { redirect: to.fullPath }
       })
     } else {
@@ -109,3 +99,13 @@ router.beforeEach((to, from, next) => {
 })
 
 export default router
+
+/*
+meta: {
+  requiresAuth: true
+}
+
+meta: {
+  requiresGuest: true
+}
+*/

@@ -19,7 +19,7 @@ const messages = {
         descriptionTitleDefault2: 'A Moon oferece um cadastro de maneira intuitiva e simples, bem como testes com os quais você pode demonstrar suas habilidades. Em pouco tempo consegui agendar entrevistas e estar inserido no mercado.',
         description: 'Descrição',
         typeCompany: 'Tipo de Empresa',
-        localization: 'Localização',
+        location: 'Localização',
         level: 'Nível',
         typeJob: 'Tipo de Trabalho',
         responsabily: 'Responsábilidade',
@@ -31,7 +31,9 @@ const messages = {
         otherBenefits: 'Outros beneficios',
         responsibilities: 'Responsabilidades',
         requirements: 'Requisitos',
-        category: 'Tipo'
+        category: 'Tipo',
+        companyName: 'Nome da Empresa',
+        registerVacancy: 'Registar Vaga'
 
     },
     'en': {
