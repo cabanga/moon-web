@@ -33,7 +33,7 @@ let router = new Router({
       component: Vacancies
     },
     {
-      path: '/vacancies/details',
+      path: '/vacancies/:id',
       name: 'vacancy',
       component: VacancyShow,
       props: true

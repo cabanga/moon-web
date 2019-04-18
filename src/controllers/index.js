@@ -1,11 +1,20 @@
+export function benefitsConvert (bonus) {
+  var k = bonus
 
-export function skillsConvert (skillsList) {
-  var k = skillsList
   if (!k) {
     return ''
   }
-  k = k.replace(/'/g, '"')
-  k = JSON.parse(k)
+  k = k.split(', ')
+  return k
+}
+
+export function skillsConvert (skillsList) {
+  var k = skillsList
+
+  if (!k) {
+    return ''
+  }
+  k = k.split(', ')
   return k
 }
 

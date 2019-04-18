@@ -33,7 +33,9 @@ const messages = {
         requirements: 'Requisitos',
         category: 'Tipo',
         companyName: 'Nome da Empresa',
-        registerVacancy: 'Registar Vaga'
+        registerVacancy: 'Registar Vaga',
+        skills: 'Competências',
+        bonus: 'Bonus'
 
     },
     'en': {

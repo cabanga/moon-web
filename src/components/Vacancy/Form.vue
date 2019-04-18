@@ -20,6 +20,11 @@
             <input v-model="location" type="text" id="inputLocation" class="form-control" placeholder="Localização ou endereço" required="">
           </div>
 
+          <div class="form-group">
+            <label for="inputSkills">{{ $t('skills') }} (Separa as competências com virgulas)</label>
+            <input v-model="skills" type="text" id="inputSkills" class="form-control" placeholder="ex: Boostrap, Rails, PHP, Laravel ...">
+          </div>
+
         </div>
 
         <div class="col-sm-12 col-md-6">
@@ -52,31 +57,36 @@
         <div class="col-sm-12">
           <div class="form-group">
             <label for="inputDescription">{{ $t('description') }}</label>
-            <input v-model="description" type="text" id="inputDescription" class="form-control" placeholder="Descrição da vaga">
+            <VueTrix inputId="inputDescription" v-model="description" placeholder="Descrição da vaga"/>
           </div>
         </div>
 
         <div class="col-sm-12">
           <div class="form-group">
             <label for="inputResponsibilities">{{ $t('responsibilities') }}</label>
-            <input v-model="responsibilities" type="text" id="inputResponsibilities" class="form-control" placeholder="Responsabilidades">
+            <VueTrix inputId="inputResponsibilities" v-model="responsibilities" placeholder="Responsabilidades"/>
           </div>
         </div>
 
         <div class="col-sm-12">
           <div class="form-group">
             <label for="inputRequirements">{{ $t('requirements') }}</label>
-            <input v-model="requirements" type="text" id="inputRequirements" class="form-control" placeholder="Requisitos">
+            <VueTrix inputId="inputRequirements" v-model="requirements" placeholder="Requisitos"/>
           </div>
         </div>
 
+        <div class="col-sm-12">
+          <div class="form-group">
+            <label for="inputBonus">{{ $t('bonus') }} - Outros Beneficios</label>
+            <VueTrix inputId="inputBonus" v-model="bonus" placeholder="O que voçes oferecem ?"/>
+          </div>
+        </div>
       </div>
 
       <div class="row">
         <div class="col">
           <hr>
           <button type="submit" class="btn btn-success btn-lg btn-submit">{{ $t('registerVacancy') }}</button>
-
         </div>
       </div>
       <br>
@@ -88,9 +98,13 @@
 <script>
   import { optionsLevel, optionsJobs } from '@/controllers'
   import { postVacancy } from '@/api'
+  import VueTrix from 'vue-trix'
 
   export default {
     name: 'Form',
+    components: {
+      VueTrix
+    },
     data () {
       return {
         title: null,
@@ -103,10 +117,10 @@
         responsibilities: null,
         requirements: null,
         city: null,
-        skills: ''
+        skills: '',
+        bonus: ''
       }
     },
-
     methods: {
       optins_level () {
         return optionsLevel()
@@ -127,7 +141,9 @@
             description: this.description,
             responsibilities: this.responsibilities,
             requirements: this.requirements,
-            city: this.city
+            city: this.city,
+            skills: this.skills,
+            bonus: this.bonus
           }
         postVacancy(vacancy)
           .then(response => {

@@ -86,7 +86,9 @@ export function postVacancy (vacancy) {
       description: vacancy.description, 
       responsibilities: vacancy.responsibilities, 
       requirements: vacancy.requirements, 
-      city: vacancy.city, 
+      city: vacancy.city,
+      skills: vacancy.skills,
+      bonus: vacancy.bonus,
       user_id: localStorage.getItem('currentUserId')
     })
     .then(response => {

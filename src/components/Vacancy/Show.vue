@@ -20,11 +20,11 @@
 
               <hr>
               <h4 class="p-show"><strong>{{ $t('responsibilities') }}</strong></h4>
-              <p class="p-show">{{vacancy.responsibilities}}</p>
+              <div v-html="vacancy.responsibilities"></div>
 
               <hr>
               <h4 class="p-show"><strong>{{ $t('requirements') }}</strong></h4>
-              <p class="p-show">{{vacancy.requirements}}</p>
+              <div v-html="vacancy.requirements"></div>
 
               <hr>
               <h4 class="p-show"><strong>{{ $t('otherBenefits') }}</strong></h4>
@@ -38,7 +38,7 @@
               <br>
           </div>
           <div class="col">
-            <p>{{vacancy.description}}</p>
+            <div v-html="vacancy.description"></div>
             <br>
             <span class="btn skills-list" v-for="skill in skills(vacancy.skills)" :key="skill.index">{{skill}}</span>
           </div>
@@ -50,7 +50,7 @@
 <script>
   import { getVacancy } from '@/api'
   import { kindLevel, kindJob } from '@/controllers/enums'
-  import { skillsConvert } from '@/controllers'
+  import { skillsConvert, benefitsConvert } from '@/controllers'
 
   export default {
     props: ['id'],
@@ -70,13 +70,7 @@
     },
     methods: {
       benefits (bonus) {
-        var b = bonus
-        if (!b) {
-          return b
-        }
-        b = b.replace(/'/g, '"')
-        b = JSON.parse(b)
-        return b
+        return benefitsConvert(bonus)
       },
       kind_level (level) {
         return kindLevel(level)
