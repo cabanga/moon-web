@@ -33,6 +33,20 @@
 ==============================================================
 */
 
+.btn-update{
+  background-color: #28a745;
+  color: #fff;
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  border-radius: 0px;
+}
+
+.btn-cancel{
+  background-color: #cccccc8f;
+  color: #b63c06;
+  margin: 0 15px;
+}
 .btn-submit{
   border-radius: 50px;
   padding: 6px 40px;

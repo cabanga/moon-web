@@ -81,6 +81,7 @@
             <div class="col">
               <hr>
               <button type="submit" class="btn btn-success btn-lg btn-submit">{{ $t('registerVacancy') }}</button>
+              <router-link class="btn btn-cancel btn-lg btn-submit" :to="{name: 'dashboard'}">Cancelar</router-link>
             </div>
           </div>
 

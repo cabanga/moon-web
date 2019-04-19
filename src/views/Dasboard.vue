@@ -11,7 +11,7 @@
   /* eslint-disable */
   // eslint-disable-next-line
   import { getMyVacancies } from '@/api'
-  import VacancyCard from '@/components/VacancyCard.vue'
+  import VacancyCard from '@/components/CardDashboard.vue'
 
   export default {
     name: 'dashboard',
