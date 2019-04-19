@@ -11,9 +11,14 @@
         <p class="p-info"><strong>{{ $t('workPlace') }} : </strong> <span>{{vacancy.location}}</span> </p>
         <p class="p-info"><strong>{{ $t('city') }} : </strong> <span>{{vacancy.city}}</span> </p>
         <br>
+        <router-link class="btn btnSubmit-login btn-sm" :to="{name: 'vacancy-edit', params: {id: vacancy.id}}">
+          Editar
+        </router-link>
+        <br>
         <router-link class="btn btnSubmit-login btn-sm" :to="{name: 'vacancy', params: {id: vacancy.id}}">
           Ver detalhes
         </router-link>
+
       </div>
     </div>
   </div>

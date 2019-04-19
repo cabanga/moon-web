@@ -47,7 +47,7 @@ let router = new Router({
       }
     },
     {
-      path: '/vacancies/:id',
+      path: '/vacancies/update/:id',
       name: 'vacancy-edit',
       component: VacancyEdit,
       props: true,

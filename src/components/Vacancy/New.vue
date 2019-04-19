@@ -119,17 +119,13 @@
         return optionsJobs()
       },
       createVacancy () {
-        console.log("test vacancy : ", this.vacancy.title);
-  
         postVacancy(this.vacancy)
         .then(response => {
-          console.log('Post vacancy : ', response)
           this.$router.push('/dashboard')
         })
         .catch(error => {
           console.log('error to post vacancy : ', error)
         })
-
       }
     }
   }

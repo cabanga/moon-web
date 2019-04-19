@@ -7,13 +7,9 @@ require('firebase/auth')
 import { setToken, setCurrentUser } from '../api/session'
 
 // const BASE_URL = process.env.API_URL || 'http://localhost:3000'
-// const BASE_URL = process.env.API_URL || 'https://moon--api.herokuapp.com'
-// https://moon--api.herokuapp.com/api/v1/vacancies
-
-
+const BASE_URL = process.env.API_URL || 'https://moon--api.herokuapp.com/api/v1'
 
 const apiClient = Axios.create({
-//  baseURL: 'http://localhost:3000',
   baseURL: 'https://moon--api.herokuapp.com/api/v1',
   withCredentials: false,
   headers: {
@@ -73,7 +69,7 @@ export function signOut () {
   })
 }
 
-// ============================== GET VACANCY =============================
+// ============================== POST VACANCY =============================
 export function postVacancy (vacancy) {
   return new Promise((resolve, reject) => {
     apiClient.post('/vacancies',{
@@ -88,6 +84,37 @@ export function postVacancy (vacancy) {
       skills: vacancy.skills,
       bonus: vacancy.bonus,
       user_id: localStorage.getItem('currentUserId')
+    })
+    .then(response => {
+      resolve(response.data)
+    })
+    .catch(error => {
+      console.log("error to get vacancy");
+      reject(error)
+    })
+  })
+}
+
+// ============================== PATCH VACANCY =============================
+export function patchVacancy (vacancy, id) {
+  return new Promise((resolve, reject) => {
+    var data = {
+      title: vacancy.title, 
+      category: vacancy.category, 
+      level: vacancy.level,
+      companyName: vacancy.companyName, 
+      location: vacancy.location, 
+      salary: vacancy.salary, 
+      description: vacancy.description, 
+      city: vacancy.city,
+      skills: vacancy.skills,
+      bonus: vacancy.bonus,
+      user_id: localStorage.getItem('currentUserId')
+    }
+    Axios({
+      method:'PATCH',
+      url: `${BASE_URL}//vacancies/${id}`,
+      data: data
     })
     .then(response => {
       resolve(response.data)
