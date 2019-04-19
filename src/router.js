@@ -56,15 +56,6 @@ let router = new Router({
       }
     },
     {
-      path: '/vacancies/close/:id',
-      name: 'vacancy-close',
-      component: VacancyEdit,
-      props: true,
-      meta: {
-        requiresAuth: true
-      }
-    },
-    {
       path: '/dashboard',
       name: 'dashboard',
       component: Dasboard,

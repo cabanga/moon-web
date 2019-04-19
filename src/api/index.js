@@ -113,7 +113,7 @@ export function patchVacancy (vacancy, id) {
     }
     Axios({
       method:'PATCH',
-      url: `${BASE_URL}//vacancies/${id}`,
+      url: `${BASE_URL}/vacancies/${id}`,
       data: data
     })
     .then(response => {
@@ -179,6 +179,23 @@ export function getMyVacancies () {
     .catch(error => {
       console.log("error to get vacancies");
       reject(error.message)
+    })
+  })
+}
+
+// ============================== CLOSE VACANCY =============================
+export function closeVacancy (id) {
+  return new Promise((resolve, reject) => {
+    Axios({
+      method:'PATCH',
+      url: `${BASE_URL}/vacancies/close_vacancy/${id}`
+    })
+    .then(response => {
+      resolve(response.data)
+    })
+    .catch(error => {
+      console.log("error to get vacancy");
+      reject(error)
     })
   })
 }

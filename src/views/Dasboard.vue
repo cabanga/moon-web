@@ -1,7 +1,9 @@
 <template>
   <div class="dashboard container">
+    <br>
     <h1>My vacancies</h1>
-      <div class="row no-padding">
+    <br>
+    <div class="row no-padding">
       <VacancyCard v-for="vac in myVacancies" :vacancy="vac" :key="vac.id" />
     </div>
   </div>
