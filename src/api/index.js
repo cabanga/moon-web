@@ -109,6 +109,8 @@ export function patchVacancy (vacancy, id) {
       city: vacancy.city,
       skills: vacancy.skills,
       bonus: vacancy.bonus,
+      contact_email: vacancy.contact_email,
+      contact_phone: vacancy.contact_phone,
       user_id: localStorage.getItem('currentUserId')
     }
     Axios({

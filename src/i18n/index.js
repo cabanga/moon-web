@@ -36,7 +36,9 @@ const messages = {
         registerVacancy: 'Registar Vaga',
         updateVacancy: 'Actualizar Vaga',
         skills: 'Competências',
-        bonus: 'Bonus'
+        bonus: 'Bonus',
+        contact_email: 'E-mail',
+        contact_phone: 'Contacto Telemóvel'
 
     },
     'en': {

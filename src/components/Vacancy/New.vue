@@ -18,6 +18,11 @@
               </div>
 
               <div class="form-group">
+                <label for="inputContactEmail">{{ $t('contact_email') }}</label>
+                <input v-model="vacancy.contact_email" type="email" id="inputContactEmail" class="form-control" placeholder="Email para responder" required="">
+              </div>
+
+              <div class="form-group">
                 <label for="inputCategory">{{ $t('level') }}</label>
                 <select v-model="vacancy.level" class="form-control" id="inputCategory">
                   <option v-for="le in optins_level()" :key="le.id" v-bind:value="le.id">{{ le.kind }}</option>
@@ -40,6 +45,11 @@
               <div class="form-group">
                 <label for="inputSalary">{{ $t('salary') }}</label>
                 <input v-model="vacancy.salary" type="number" id="inputSalary" class="form-control" placeholder="Valor do salário">
+              </div>
+
+              <div class="form-group">
+                <label for="inputContactPhone">{{ $t('contact_phone') }}</label>
+                <input v-model="vacancy.contact_phone" type="text" id="inputContactPhone" class="form-control" placeholder="Telemóvel ou telefone" required="">
               </div>
 
               <div class="form-group">
