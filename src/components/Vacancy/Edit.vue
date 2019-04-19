@@ -8,9 +8,30 @@
       </div>
 
       <div class="container m15">
-        <div class="row">
 
-        </div>
       </div>
     </div>
 </template>
+
+<script>
+  import { getVacancy } from '@/api'
+
+  export default {
+    name: 'edit-vacancy',
+    props: ['id'],
+    data () {
+      return {
+        vacancyObject: {}
+      }
+    },
+    created () {
+      getVacancy(this.id)
+        .then(vacancy => {
+          this.vacancyObject = vacancy
+        })
+        .catch(error => {
+          console.log(error)
+        })
+    }
+  }
+</script>

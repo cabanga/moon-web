@@ -84,8 +84,6 @@ export function postVacancy (vacancy) {
       location: vacancy.location, 
       salary: vacancy.salary, 
       description: vacancy.description, 
-      responsibilities: vacancy.responsibilities, 
-      requirements: vacancy.requirements, 
       city: vacancy.city,
       skills: vacancy.skills,
       bonus: vacancy.bonus,

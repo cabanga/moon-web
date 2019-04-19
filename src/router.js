@@ -47,9 +47,10 @@ let router = new Router({
       }
     },
     {
-      path: '/vacancies/edit',
+      path: '/vacancies/:id',
       name: 'vacancy-edit',
       component: VacancyEdit,
+      props: true,
       meta: {
         requiresAuth: true
       }

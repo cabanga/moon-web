@@ -23,8 +23,8 @@
     components: {
       VacancyCard
     },
-    created () {
-      getMyVacancies()
+    async created () {
+      await getMyVacancies()
       .then(res => {
         this.myVacancies = res        
       })

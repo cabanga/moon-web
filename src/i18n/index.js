@@ -34,6 +34,7 @@ const messages = {
         category: 'Tipo',
         companyName: 'Nome da Empresa',
         registerVacancy: 'Registar Vaga',
+        updateVacancy: 'Actualizar Vaga',
         skills: 'Competências',
         bonus: 'Bonus'
 

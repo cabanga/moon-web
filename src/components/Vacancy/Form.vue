@@ -1,97 +1,97 @@
 <template>
-    <form @submit.prevent="createVacancy">
-      <div class="row">
-
-        <div class="col-sm-12 col-md-6">
-          <div class="form-group">
-            <label for="inputTitle">{{ $t('titleVacancy') }}</label>
-            <input v-model="title" type="text" id="inputTitle" class="form-control" placeholder="Title" required="" autofocus="">
-          </div>
-
-          <div class="form-group">
-            <label for="inputCategory">{{ $t('level') }}</label>
-            <select v-model="level" class="form-control" id="inputCategory">
-              <option v-for="le in optins_level()" :key="le.id" v-bind:value="le.id">{{ le.kind }}</option>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label for="inputLocation">{{ $t('location') }}</label>
-            <input v-model="location" type="text" id="inputLocation" class="form-control" placeholder="Localização ou endereço" required="">
-          </div>
-
-          <div class="form-group">
-            <label for="inputSkills">{{ $t('skills') }} (Separa as competências com virgulas)</label>
-            <input v-model="skills" type="text" id="inputSkills" class="form-control" placeholder="ex: Boostrap, Rails, PHP, Laravel ...">
-          </div>
-
+  <form @submit.prevent="createVacancy">
+    <div class="row">
+      <div class="col-sm-12 col-md-6">
+        <div class="form-group">
+          <label for="inputTitle">{{ $t('titleVacancy') }}</label>
+          <input v-model="vacancyObject.title" type="text" id="inputTitle" class="form-control" placeholder="Title" required="" autofocus="">
         </div>
 
-        <div class="col-sm-12 col-md-6">
-          <div class="form-group">
-            <label for="inputSalary">{{ $t('salary') }}</label>
-            <input v-model="salary" type="number" id="inputSalary" class="form-control" placeholder="Valor do salário">
-          </div>
+        <div class="form-group">
+          <label for="inputCategory">{{ $t('level') }}</label>
+          <select v-model="vacancyObject.level" class="form-control" id="inputCategory">
+            <option v-for="le in optins_level()" :key="le.id" v-bind:value="le.id">{{ le.kind }}</option>
+          </select>
+        </div>
 
-          <div class="form-group">
-            <label for="inputCompanyName">{{ $t('companyName') }}</label>
-            <input v-model="companyName" type="text" id="inputCompanyName" class="form-control" placeholder="Nome da empresa" required="">
-          </div>
+        <div class="form-group">
+          <label for="inputLocation">{{ $t('location') }}</label>
+          <input v-model="vacancyObject.location" type="text" id="inputLocation" class="form-control" placeholder="Localização ou endereço" required="">
+        </div>
 
-          <div class="form-group">
-            <label for="inputCategory">{{ $t('category') }}</label>
-            <select v-model="category" class="form-control" id="inputCategory">
-              <option v-for="le in optins_jobs()" :key="le.id" v-bind:value="le.id">{{ le.kind }}</option>
-            </select>
-          </div>
+        <div class="form-group">
+          <label for="inputSkills">{{ $t('skills') }} (Separa as competências com virgulas)</label>
+          <input v-model="vacancyObject.skills" type="text" id="inputSkills" class="form-control" placeholder="ex: Boostrap, Rails, PHP, Laravel ...">
+        </div>
 
-          <div class="form-group">
-            <label for="inputCity">{{ $t('city') }}</label>
-            <input v-model="city" type="text" id="inputCity" class="form-control" placeholder="Cidade" required="">
-          </div>
+      </div>
 
+      <div class="col-sm-12 col-md-6">
+        <div class="form-group">
+          <label for="inputSalary">{{ $t('salary') }}</label>
+          <input v-model="vacancyObject.salary" type="number" id="inputSalary" class="form-control" placeholder="Valor do salário">
+        </div>
+
+        <div class="form-group">
+          <label for="inputCompanyName">{{ $t('companyName') }}</label>
+          <input v-model="vacancyObject.companyName" type="text" id="inputCompanyName" class="form-control" placeholder="Nome da empresa" required="">
+        </div>
+
+        <div class="form-group">
+          <label for="inputCategory">{{ $t('category') }}</label>
+          <select v-model="vacancyObject.category" class="form-control" id="inputCategory">
+            <option v-for="le in optins_jobs()" :key="le.id" v-bind:value="le.id">{{ le.kind }}</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="inputCity">{{ $t('city') }}</label>
+          <input v-model="vacancyObject.city" type="text" id="inputCity" class="form-control" placeholder="Cidade" required="">
+        </div>
+
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="form-group">
+          <label for="inputDescription">{{ $t('description') }}</label>
+          <VueTrix inputId="inputDescription" v-model="vacancyObject.description" placeholder="Descrição da vaga"/>
         </div>
       </div>
 
-      <div class="row">
-        <div class="col-sm-12">
-          <div class="form-group">
-            <label for="inputDescription">{{ $t('description') }}</label>
-            <VueTrix inputId="inputDescription" v-model="description" placeholder="Descrição da vaga"/>
-          </div>
-        </div>
-
-        <div class="col-sm-12">
-          <div class="form-group">
-            <label for="inputResponsibilities">{{ $t('responsibilities') }}</label>
-            <VueTrix inputId="inputResponsibilities" v-model="responsibilities" placeholder="Responsabilidades"/>
-          </div>
-        </div>
-
-        <div class="col-sm-12">
-          <div class="form-group">
-            <label for="inputRequirements">{{ $t('requirements') }}</label>
-            <VueTrix inputId="inputRequirements" v-model="requirements" placeholder="Requisitos"/>
-          </div>
-        </div>
-
-        <div class="col-sm-12">
-          <div class="form-group">
-            <label for="inputBonus">{{ $t('bonus') }} - Outros Beneficios</label>
-            <VueTrix inputId="inputBonus" v-model="bonus" placeholder="O que voçes oferecem ?"/>
-          </div>
+      <div class="col-sm-12">
+        <div class="form-group">
+          <label for="inputResponsibilities">{{ $t('responsibilities') }}</label>
+          <VueTrix inputId="inputResponsibilities" v-model="vacancyObject.responsibilities" placeholder="Responsabilidades"/>
         </div>
       </div>
 
-      <div class="row">
-        <div class="col">
-          <hr>
-          <button type="submit" class="btn btn-success btn-lg btn-submit">{{ $t('registerVacancy') }}</button>
+      <div class="col-sm-12">
+        <div class="form-group">
+          <label for="inputRequirements">{{ $t('requirements') }}</label>
+          <VueTrix inputId="inputRequirements" v-model="vacancyObject.requirements" placeholder="Requisitos"/>
         </div>
       </div>
-      <br>
-      <br>
-      <br>
+
+      <div class="col-sm-12">
+        <div class="form-group">
+          <label for="inputBonus">{{ $t('bonus') }} - Outros Beneficios</label>
+          <VueTrix inputId="inputBonus" v-model="vacancyObject.bonus" placeholder="O que voçes oferecem ?"/>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <hr>
+        <button v-if="vacancyObject.id" type="submit" class="btn btn-success btn-lg btn-submit">{{ $t('updateVacancy') }}</button>
+        <button v-else type="submit" class="btn btn-success btn-lg btn-submit">{{ $t('registerVacancy') }}</button>
+      </div>
+    </div>
+    <br>
+    <br>
+    <br>
   </form>
 </template>
 
@@ -105,21 +105,18 @@
     components: {
       VueTrix
     },
+    props: {
+      vacancyObject: Object
+    },
     data () {
       return {
-        title: null,
-        category: null,
-        level: null,
-        companyName: '',
-        location: '',
-        salary: null,
-        description: null,
-        responsibilities: null,
-        requirements: null,
-        city: null,
-        skills: '',
-        bonus: ''
+        vacancy: {}
       }
+    },
+    created () {
+      console.log('hhdhdhdd : ')
+
+      this.vacancy = this.vacancyObject
     },
     methods: {
       optins_level () {
@@ -129,8 +126,8 @@
         return optionsJobs()
       },
       createVacancy () {
-        console.log('submit form')
-        const vacancy =
+        // const vacancy =
+        /*
           {
             title: this.title,
             category: this.category,
@@ -145,14 +142,16 @@
             skills: this.skills,
             bonus: this.bonus
           }
+
         postVacancy(vacancy)
-          .then(response => {
-            console.log('Post vacancy : ', response)
-            this.$router.go('/dasboard')
-          })
-          .catch(error => {
-            console.log('error to post vacancy : ', error)
-          })
+        .then(response => {
+        console.log('Post vacancy : ', response)
+        this.$router.go('/dasboard')
+        })
+        .catch(error => {
+        console.log('error to post vacancy : ', error)
+        })
+*/
       }
     }
 
