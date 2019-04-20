@@ -10,7 +10,6 @@ import VacancyShow from './components/Vacancy/Show'
 import VacancyEdit from './components/Vacancy/Edit'
 import VacancyNew from './components/Vacancy/New'
 import NotFountComponent from './components/404'
-import ApplyCandidate from './views/ApplyCandidate.vue'
 
 Vue.use(Router)
 

@@ -38,7 +38,9 @@ const messages = {
         skills: 'Competências',
         bonus: 'Bonus',
         contact_email: 'E-mail',
-        contact_phone: 'Contacto Telemóvel'
+        contact_phone: 'Contacto Telemóvel',
+        vacancies: 'Vagas',
+        vacancy: 'Vaga'
 
     },
     'en': {

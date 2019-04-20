@@ -16,13 +16,13 @@
               <router-link class="nav-link" :to="{name: 'home'}">Home <span class="sr-only">(current)</span></router-link>
             </li>
             <li class="nav-item">
-              <router-link class="nav-link" :to="{name: 'vacancies'}">Vacancies</router-link>
+              <router-link class="nav-link" :to="{name: 'vacancies'}">{{ $t('vacancies') }}</router-link>
             </li>
           </ul>
 
           <ul class="navbar-nav">
             <li class="nav-item">
-              <router-link class="nav-link btn btnGetStarted btn-sm btn-get-start" to="/">Get Started</router-link>
+              <router-link class="nav-link btn btnGetStarted btn-sm btn-get-start" to="/">Fazer registro</router-link>
             </li>
             <li class="nav-item">
               <router-link class="nav-link" :to="{name: 'login'}">Login</router-link>
