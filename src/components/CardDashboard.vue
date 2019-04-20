@@ -45,7 +45,7 @@
     },
     methods: {
       close_vacancy (id) {
-        if (confirm('Tens certeza  que queres encerrar esta vaga?')) {
+        if (confirm('Tens certeza que queres encerrar esta vaga?')) {
           closeVacancy(id)
             .then(res => {
               this.$router.go('/dasboard')

@@ -8,7 +8,6 @@
       </div>
 
       <div class="container m15">
-
         <form @submit.prevent="updateVacancy">
           <div class="row">
             <div class="col-sm-12 col-md-6">

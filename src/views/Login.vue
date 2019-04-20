@@ -64,7 +64,7 @@
       authFacebook () {
         facebookAutProvider ()
         .then(res => {
-          this.$router.go('/dasboard')
+          this.$router.go('/dashboard')
         })
         .catch(error => {
           this.error = error

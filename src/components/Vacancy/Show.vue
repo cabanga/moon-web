@@ -22,7 +22,7 @@
               <div v-html="vacancy.description"></div>
 
               <br>
-              <router-link class="btn btn-aplicar" to="/">Aplicar nesta vaga</router-link>
+              <button class="btn btn-aplicar" v-on:click="apply_candidate(vacancy.id)">Aplicar nesta vaga</button>
               <br>
               <br>
               <br>
@@ -40,7 +40,7 @@
 </template>
 
 <script>
-  import { getVacancy } from '@/api'
+  import { getVacancy, applyCandidate } from '@/api'
   import { kindLevel, kindJob } from '@/controllers/enums'
   import { skillsConvert } from '@/controllers'
 
@@ -69,6 +69,22 @@
       },
       skills (skillsList) {
         return skillsConvert(skillsList)
+      },
+      apply_candidate (id) {
+        if (confirm('Tens certeza que queres candidatar-se a esta vaga?')) {
+          if (localStorage.getItem('currentToken')) {
+            applyCandidate (id)
+            .then(res => {
+              this.$router.push('/dashboard')
+            })
+            .catch(error => {
+              this.error = error
+            })
+          } else {
+            this.$router.push({ name: 'login', query: { redirect: `/vacancies/${id}` } });
+          }
+        }
+
       }
     }
   }

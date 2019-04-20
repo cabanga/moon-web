@@ -89,7 +89,7 @@ export function postVacancy (vacancy) {
       resolve(response.data)
     })
     .catch(error => {
-      console.log("error to get vacancy");
+      console.log('error to post vacancy')
       reject(error)
     })
   })
@@ -122,7 +122,7 @@ export function patchVacancy (vacancy, id) {
       resolve(response.data)
     })
     .catch(error => {
-      console.log("error to get vacancy");
+      console.log('error to patch vacancy')
       reject(error)
     })
   })
@@ -136,7 +136,7 @@ export function getVacancies () {
       resolve(response.data)
     })
     .catch(error => {
-      console.log("error to get vacancies");
+      console.log('error to get vacancies')
       reject(error.message)
     })
   })
@@ -150,7 +150,7 @@ export function getVacancy (id) {
       resolve(response.data)
     })
     .catch(error => {
-      console.log("error to get vacancy");
+      console.log('error to get vacancy')
       reject(error.message)
     })
   })
@@ -164,7 +164,7 @@ export function getLastVacancies () {
       resolve(response.data)
     })
     .catch(error => {
-      console.log("error to get vacancies");
+      console.log('error to get vacancies')
       reject(error.message)
     })
   })
@@ -179,7 +179,7 @@ export function getMyVacancies () {
       resolve(response.data)
     })
     .catch(error => {
-      console.log("error to get vacancies");
+      console.log('error to get vacancies')
       reject(error.message)
     })
   })
@@ -196,7 +196,28 @@ export function closeVacancy (id) {
       resolve(response.data)
     })
     .catch(error => {
-      console.log("error to get vacancy");
+      console.log('error to get vacancy')
+      reject(error)
+    })
+  })
+}
+
+// ============================== APPLY CANDIDATE =============================
+export function applyCandidate (id) {
+  return new Promise((resolve, reject) => {
+    Axios({
+      method:'POST',
+      url: `${BASE_URL}/candidates`,
+      data: {
+        vacancy_id: id,
+        user_id: localStorage.getItem('currentUserId')
+      }
+    })
+    .then(response => {
+      resolve(response.data)
+    })
+    .catch(error => {
+      console.log('error to post candidate')
       reject(error)
     })
   })
