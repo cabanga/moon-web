@@ -14,7 +14,7 @@
               <h3>{{vacancy.companyName}}</h3>
               <p class="p-show"><strong>{{ $t('category') }} : </strong> <span>{{kind_job(vacancy.category)}}</span> </p>
               <p class="p-show"><strong>{{ $t('level') }} : </strong> <span>{{kind_level(vacancy.level)}}</span> </p>
-              <p class="p-show"><strong>{{ $t('salary') }} : </strong> <span>{{vacancy.salary}}</span> </p>
+              <p class="p-show"><strong>{{ $t('salary') }} : </strong> <span>{{ salary }}</span> </p>
               <p class="p-show"><strong>{{ $t('workPlace') }} : </strong> <span>{{vacancy.location}}</span> </p>
               <p class="p-show"><strong>{{ $t('city') }} : </strong> <span>{{vacancy.city}}</span> </p>
 
@@ -42,19 +42,21 @@
 <script>
   import { getVacancy, applyCandidate } from '@/api'
   import { kindLevel, kindJob } from '@/controllers/enums'
-  import { skillsConvert } from '@/controllers'
+  import { skillsConvert, currencyFormat } from '@/controllers'
 
   export default {
     props: ['id'],
     data () {
       return {
-        vacancy: {}
+        vacancy: {},
+        salary: null
       }
     },
     created () {
       getVacancy(this.id)
         .then(vacancy => {
           this.vacancy = vacancy
+          this.salary = currencyFormat(this.vacancy.salary)
         })
         .catch(error => {
           console.log(error)
@@ -73,18 +75,17 @@
       apply_candidate (id) {
         if (confirm('Tens certeza que queres candidatar-se a esta vaga?')) {
           if (localStorage.getItem('currentToken')) {
-            applyCandidate (id)
-            .then(res => {
-              this.$router.push('/dashboard')
-            })
-            .catch(error => {
-              this.error = error
-            })
+            applyCandidate(id)
+              .then(res => {
+                this.$router.push('/dashboard')
+              })
+              .catch(error => {
+                this.error = error
+              })
           } else {
-            this.$router.push({ name: 'login', query: { redirect: `/vacancies/${id}` } });
+            this.$router.push({ name: 'login', query: { redirect: `/vacancies/${id}` } })
           }
         }
-
       }
     }
   }

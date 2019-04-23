@@ -7,7 +7,7 @@
             <div class="card-body">
               <h5 class="color-default">{{vacancy.title}}</h5>
               <p><span>{{vacancy.company}}</span> </p>
-              <p class="p-info"><strong>{{ $t('salary') }} : </strong> <span>{{vacancy.salary}}</span> </p>
+              <p class="p-info"><strong>{{ $t('salary') }} : </strong> <span>{{ salary }}</span> </p>
               <p class="p-info"><strong>{{ $t('workPlace') }} : </strong> <span>{{vacancy.workPlace}}</span> </p>
               <p class="p-info"><strong>{{ $t('city') }} : </strong> <span>{{vacancy.city}}</span> </p>
             </div>
@@ -24,7 +24,7 @@
 </template>
 
 <script>
-  import { skillsConvert } from '@/controllers'
+  import { skillsConvert, currencyFormat } from '@/controllers'
 
   export default {
     props: {
@@ -34,6 +34,14 @@
       skills (skillsList) {
         return skillsConvert(skillsList)
       }
+    },
+    data () {
+      return {
+        salary: null
+      }
+    },
+    created () {
+      this.salary = currencyFormat(this.vacancy.salary)
     }
   }
 </script>

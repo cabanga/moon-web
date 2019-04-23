@@ -8,7 +8,7 @@
         </div>
         <div class="card-body">
           <p><span>{{vacancy.companyName}}</span> </p>
-          <p class="p-info"><strong>{{ $t('salary') }} : </strong> <span>{{vacancy.salary}}</span> </p>
+          <p class="p-info"><strong>{{ $t('salary') }} : </strong> <span>{{ salary }}</span> </p>
           <p class="p-info"><strong>{{ $t('workPlace') }} : </strong> <span>{{vacancy.location}}</span> </p>
           <p class="p-info"><strong>{{ $t('city') }} : </strong> <span>{{vacancy.city}}</span> </p>
           <br>
@@ -33,6 +33,7 @@
 
 <script>
   import { closeVacancy } from '@/api'
+  import { currencyFormat } from '@/controllers'
 
   export default {
     props: {
@@ -55,6 +56,14 @@
             })
         }
       }
+    },
+    data () {
+      return {
+        salary: null
+      }
+    },
+    created () {
+      this.salary = currencyFormat(this.vacancy.salary)
     }
   }
 </script>
