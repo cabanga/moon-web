@@ -17,7 +17,7 @@
               <p class="p-show"><strong>{{ $t('salary') }} : </strong> <span>{{ salary }}</span> </p>
               <p class="p-show"><strong>{{ $t('workPlace') }} : </strong> <span>{{vacancy.location}}</span> </p>
               <p class="p-show"><strong>{{ $t('city') }} : </strong> <span>{{vacancy.city}}</span> </p>
-
+              <h1>{{vacancy.candidates}}</h1>
               <hr>
               <div v-html="vacancy.description"></div>
 
@@ -54,13 +54,13 @@
     },
     created () {
       getVacancy(this.id)
-        .then(vacancy => {
-          this.vacancy = vacancy
-          this.salary = currencyFormat(this.vacancy.salary)
-        })
-        .catch(error => {
-          console.log(error)
-        })
+      .then(vacancy => {
+        this.vacancy = vacancy
+        this.salary = currencyFormat(this.vacancy.salary)
+      })
+      .catch(error => {
+        console.log(error)
+      })
     },
     methods: {
       kind_level (level) {
