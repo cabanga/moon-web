@@ -17,12 +17,11 @@
               <p class="p-show"><strong>{{ $t('salary') }} : </strong> <span>{{ salary }}</span> </p>
               <p class="p-show"><strong>{{ $t('workPlace') }} : </strong> <span>{{vacancy.location}}</span> </p>
               <p class="p-show"><strong>{{ $t('city') }} : </strong> <span>{{vacancy.city}}</span> </p>
-              <h1>{{vacancy.candidates}}</h1>
               <hr>
               <div v-html="vacancy.description"></div>
 
               <br>
-              <button class="btn btn-aplicar" v-on:click="apply_candidate(vacancy.id)">Aplicar nesta vaga</button>
+              <button v-if="!already_applied" class="btn btn-aplicar" v-on:click="apply_candidate(vacancy.id)">Aplicar nesta vaga</button>
               <br>
               <br>
               <br>
@@ -40,7 +39,9 @@
 </template>
 
 <script>
-  import { getVacancy, applyCandidate } from '@/api'
+  import { getVacancy, applyCandidate, alreadyApplied } from '@/api'
+  import { userLogged } from '@/api/session'
+  
   import { kindLevel, kindJob } from '@/controllers/enums'
   import { skillsConvert, currencyFormat } from '@/controllers'
 
@@ -49,7 +50,8 @@
     data () {
       return {
         vacancy: {},
-        salary: null
+        salary: null,
+        already_applied: false
       }
     },
     created () {
@@ -60,8 +62,22 @@
       })
       .catch(error => {
         console.log(error)
+      }),
+      
+      alreadyApplied(this.id)
+      .then(was => {
+        if (userLogged) {
+          this.already_applied = was && true
+        } else {
+          this.already_applied = was && false
+        }
       })
+      .catch(error => {
+        console.log(error)
+      })
+
     },
+    
     methods: {
       kind_level (level) {
         return kindLevel(level)
@@ -73,6 +89,7 @@
         return skillsConvert(skillsList)
       },
       apply_candidate (id) {
+      
         if (confirm('Tens certeza que queres candidatar-se a esta vaga?')) {
           if (localStorage.getItem('currentToken')) {
             applyCandidate(id)
@@ -86,6 +103,8 @@
             this.$router.push({ name: 'login', query: { redirect: `/vacancies/${id}` } })
           }
         }
+        
+
       }
     }
   }

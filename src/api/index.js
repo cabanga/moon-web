@@ -222,3 +222,20 @@ export function applyCandidate (id) {
     })
   })
 }
+
+// ============================== CLOSE VACANCY =============================
+export function alreadyApplied (id) {
+  return new Promise((resolve, reject) => {
+    Axios({
+      method:'GET',
+      url: `${BASE_URL}/vacancy/${id}/${localStorage.getItem('currentUserId')}`
+    })
+    .then(response => {
+      resolve(response.data)
+    })
+    .catch(error => {
+      console.log('error to get vacancy')
+      reject(error)
+    })
+  })
+}
