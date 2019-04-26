@@ -1,6 +1,6 @@
 <template>
   <div class="mg-nav">
-    <nav class="navbar navbar-expand-lg navbar-light">
+    <nav class="navbar navbar-expand-lg navbar-light" style="box-shadow: 0px -15px 23px 0 #b63c04;">
       <div class="container">
         <router-link class="navbar-brand" to="/">
           <img width="50" alt="Vue logo" src="../assets/images/icon.png">
