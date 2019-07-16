@@ -22,7 +22,7 @@
 
           <ul class="navbar-nav">
             <li class="nav-item">
-              <router-link class="nav-link btn btnGetStarted btn-sm btn-get-start" to="/">Fazer registro</router-link>
+              <router-link class="nav-link btn btnGetStarted btn-sm btn-get-start" to="/register">Fazer registro</router-link>
             </li>
             <li class="nav-item">
               <router-link class="nav-link" :to="{name: 'login'}">Login</router-link>

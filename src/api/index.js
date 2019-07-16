@@ -18,6 +18,23 @@ const apiClient = Axios.create({
   }
 })
 
+
+// =======================================================================================
+export function signUp(creandials) {
+  return new Promise((resolve, reject) => {
+
+    firebase.auth().createUserWithEmailAndPassword(creandials.email, creandials.password)
+    .then(res => {
+      this.$store.commit('setCurrentUser', firebase.auth().currentUser);
+      store.commit('setCurrentUser', firebase.auth().currentUser);
+      resolve(res.user);
+    })
+    .catch( error => {
+      reject(error.message);
+    });
+  })
+}
+
 // ================================== LOGIN =================================
 export function signIn (creandials) {
   return new Promise((resolve, reject) => {
@@ -73,13 +90,13 @@ export function signOut () {
 export function postVacancy (vacancy) {
   return new Promise((resolve, reject) => {
     apiClient.post('/vacancies',{
-      title: vacancy.title, 
-      category: vacancy.category, 
+      title: vacancy.title,
+      category: vacancy.category,
       level: vacancy.level,
-      companyName: vacancy.companyName, 
-      location: vacancy.location, 
-      salary: vacancy.salary, 
-      description: vacancy.description, 
+      companyName: vacancy.companyName,
+      location: vacancy.location,
+      salary: vacancy.salary,
+      description: vacancy.description,
       city: vacancy.city,
       skills: vacancy.skills,
       bonus: vacancy.bonus,
@@ -99,13 +116,13 @@ export function postVacancy (vacancy) {
 export function patchVacancy (vacancy, id) {
   return new Promise((resolve, reject) => {
     var data = {
-      title: vacancy.title, 
-      category: vacancy.category, 
+      title: vacancy.title,
+      category: vacancy.category,
       level: vacancy.level,
-      companyName: vacancy.companyName, 
-      location: vacancy.location, 
-      salary: vacancy.salary, 
-      description: vacancy.description, 
+      companyName: vacancy.companyName,
+      location: vacancy.location,
+      salary: vacancy.salary,
+      description: vacancy.description,
       city: vacancy.city,
       skills: vacancy.skills,
       bonus: vacancy.bonus,
