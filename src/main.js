@@ -8,9 +8,9 @@ import './registerServiceWorker'
 import firebase from 'firebase/app'
 import config from '@/services/firebase'
 
-import 'bootstrap'
-import 'bootstrap/dist/css/bootstrap.min.css'
-import '@/assets/css/application.css'
+//import 'bootstrap'
+//import 'bootstrap/dist/css/bootstrap.min.css'
+//import '@/assets/css/application.css'
 
 import i18n from '@/i18n'
 

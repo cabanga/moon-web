@@ -1,7 +1,9 @@
 <template>
-  <div id="app" :class="{'bg': isBlack}">
-    <NavBar v-if="['home', 'vacancies', 'login', 'vacancy'].indexOf($route.name) > -1" />
-    <NavBarLogged v-else />
+  <div >
+    <NavBar  />
+
+    <!--<NavBar v-if="['home', 'vacancies', 'login', 'vacancy'].indexOf($route.name) > -1" />-->
+    <!-- <NavBarLogged v-else /> -->
     <router-view/>
   </div>
 </template>

@@ -1,36 +1,36 @@
 <template>
-  <div class="mg-nav">
-    <nav class="navbar navbar-expand-lg navbar-light">
-      <div class="container">
+  <div class="">
+	  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+	    <div class="container">
         <router-link class="navbar-brand" to="/">
           <img width="50" alt="Vue logo" src="../assets/images/icon.png">
         </router-link>
+        
+	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+	        <span class="oi oi-menu"></span> Menu
+	      </button>
 
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+	      <div class="collapse navbar-collapse" id="ftco-nav">
+	        <ul class="navbar-nav ml-auto">
+	          <li class="nav-item active">
+              <router-link class="nav-link" :to="{name: 'home'}">Home</router-link>
+            </li>
+            
+	          <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+	          <li class="nav-item"><a href="candidates.html" class="nav-link">Canditates</a></li>
+	          <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
+	          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+	          <li class="nav-item cta mr-md-1"><a href="new-post.html" class="nav-link">Post a Job</a></li>
+	          <li class="nav-item cta cta-colored"><a href="job-post.html" class="nav-link">Want a Job</a></li>
 
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <router-link class="nav-link" :to="{name: 'home'}">Home <span class="sr-only">(current)</span></router-link>
-            </li>
-            <li class="nav-item">
-              <router-link class="nav-link" :to="{name: 'vacancies'}">Vacancies</router-link>
-            </li>
-          </ul>
-
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <router-link class="nav-link btn btnGetStarted btn-sm btn-get-start" to="/">Get Started</router-link>
-            </li>
-            <li class="nav-item">
-              <router-link class="nav-link" :to="{name: 'login'}">Login</router-link>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+	        </ul>
+	      </div>
+	    </div>
+	  </nav>
+    <!-- END nav -->
+    <br>
+    <br>
+    <br>
   </div>
 </template>
 
@@ -39,3 +39,4 @@
     margin-bottom: 3%;
   }
 </style>
+
